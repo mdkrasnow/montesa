@@ -1,0 +1,5 @@
+Metric,Count,Mean,Median,Std_Dev,Min,Max,Q1,Q3,IQR,Skewness,Kurtosis
+First Transcript Word Count,200,1230.08,936.5,817.45,20.0,3380.0,735.0,1587.5,852.5,1.0,0.13
+Last Transcript Word Count,199,739.82,605.0,698.03,3.0,4089.0,204.5,1049.0,844.5,1.54,3.17
+First Transcript Duration (min),200,8.2,6.24,5.45,0.13,22.53,4.9,10.58,5.68,1.0,0.13
+Last Transcript Duration (min),199,4.93,4.03,4.65,0.02,27.26,1.36,6.99,5.63,1.54,3.17

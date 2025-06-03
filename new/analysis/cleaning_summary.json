@@ -1,0 +1,36 @@
+{
+  "timestamp": "2025-06-03T11:05:37.544389",
+  "original_rows": 208,
+  "final_rows": 203,
+  "removed_rows": 5,
+  "removal_percentage": 2.403846153846154,
+  "columns_removed": [
+    "First Audio Transcript First Speaker",
+    "Last Audio Transcript First Speaker"
+  ],
+  "cleaning_parameters": {
+    "words_per_minute": 150,
+    "min_transcript_words": 10
+  },
+  "removed_unpaired_identifiers": [
+    "689604",
+    "528281",
+    "468611",
+    "495473",
+    "1381979",
+    "556555",
+    "434688",
+    "773626",
+    "436493",
+    "353524",
+    "339317",
+    "334938",
+    "317396",
+    "250563",
+    "247551",
+    "205542",
+    "353748",
+    "418517",
+    "1453307"
+  ]
+}

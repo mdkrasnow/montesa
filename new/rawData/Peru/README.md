@@ -28,7 +28,7 @@ ones with exactly 2 clips did not need any processing and could be used as is
 - 
 ## Transcription
 
-
+- 4 rows were removed due to failure to process their transcriptions
 
 ## Cleaning
 
