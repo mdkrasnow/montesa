@@ -49,12 +49,6 @@ def load_example_data():
             examples.append((text_input, output_json))
     return examples
 
-
-# Initialize Supabase client
-url = os.getenv("NEXT_PUBLIC_SUPABASE_URL")
-service_key = os.getenv("SUPABASE_SERVICE_ROLE_KEY")
-supabase: Client = create_client(url, service_key)
-
 def generate_input_data():
     """
     Generate a brand-new example input as JSON with two keys:
