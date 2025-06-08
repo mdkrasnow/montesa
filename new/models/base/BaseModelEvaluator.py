@@ -193,12 +193,6 @@ class BaseModelEvaluator:
     def evaluate(self, text: str) -> Dict[str, Any]:
         """
         Generate an evaluation based on the flexible framework structure.
-
-        Args:
-            text (str): The observation text.
-
-        Returns:
-            Dict[str, Any]: The generated evaluation result.
         """
         try:
             # Step 1: Initialize evaluation structure
@@ -228,12 +222,14 @@ class BaseModelEvaluator:
                         comp_id = str(
                             component.get(
                                 "id",
-                                component.get("name",
-                                              component.get("number", component.get("description", "")))
+                                component.get(
+                                    "name",
+                                    component.get("number", component.get("description", ""))
+                                )
                             )
                         )
-                        prompt = create_generic_component_prompt(component, text, self.framework)
-
+                        # Include empty context string for prompt generation (fix)
+                        prompt = create_generic_component_prompt(component, text, self.framework, "")
                         if component.get("isManuallyScored", False):
                             # If manually scored, skip AI generation
                             placeholder = {
@@ -262,6 +258,7 @@ class BaseModelEvaluator:
                 for (domain_id, comp_id), future in component_futures.items():
                     try:
                         result = future.result()
+                        # Preserve manual scoring flag if present
                         result["isManuallyScored"] = evaluation["domains"][domain_id]["components"].get(
                             comp_id, {}
                         ).get("isManuallyScored", result.get("isManuallyScored", False))
@@ -270,8 +267,7 @@ class BaseModelEvaluator:
                         logger.error(f"Component {comp_id} in domain {domain_id} error: {exc}")
                         original_component = next(
                             (
-                                c
-                                for c in domain_component_map.get(domain_id, [])
+                                c for c in domain_component_map.get(domain_id, [])
                                 if str(c.get("id", c.get("number", c.get("description", "")))) == comp_id
                             ),
                             {"scoreList": []},
@@ -286,10 +282,10 @@ class BaseModelEvaluator:
                 summary_futures: Dict[str, concurrent.futures.Future] = {}
                 for domain_id in domain_component_map:
                     domain_def = next(
-                        (d for d in domains_list if str(d.get("id", d.get("number", d.get("name", "")))) == domain_id),
+                        (d for d in domains_list 
+                         if str(d.get("id", d.get("number", d.get("name", "")))) == domain_id),
                         {}
                     )
-
                     if domain_def.get("isManuallyScored", False):
                         logger.info(f"Skipping summary for manually scored domain: {domain_id}")
                         evaluation["domains"][domain_id]["summary"] = ""

@@ -227,13 +227,7 @@ class CoTModelEvaluator:
 
     def evaluate(self, text: str) -> Dict[str, Any]:
         """
-        Generate an evaluation based on the flexible framework structure.
-
-        Args:
-            text (str): The observation text.
-
-        Returns:
-            Dict[str, Any]: The generated evaluation result.
+        Generate an evaluation based on the framework, using Chain-of-Thought prompting.
         """
         try:
             # Step 1: Initialize evaluation structure
@@ -263,14 +257,16 @@ class CoTModelEvaluator:
                         comp_id = str(
                             component.get(
                                 "id",
-                                component.get("name",
-                                              component.get("number", component.get("description", "")))
+                                component.get(
+                                    "name",
+                                    component.get("number", component.get("description", ""))
+                                )
                             )
                         )
-                        base_prompt = create_generic_component_prompt(component, text, self.framework)
-                        # Wrapped with chain-of-thought inside generate_component_evaluation
+                        # Include empty context string for prompt generation (fix)
+                        base_prompt = create_generic_component_prompt(component, text, self.framework, "")
+                        # The CoT prompt will wrap this base_prompt inside generate_component_evaluation
                         if component.get("isManuallyScored", False):
-                            # If manually scored, skip AI generation
                             placeholder = {
                                 "score": None,
                                 "summary": "",
@@ -306,8 +302,7 @@ class CoTModelEvaluator:
                         logger.error(f"Component {comp_id} in domain {domain_id} error: {exc}")
                         original_component = next(
                             (
-                                c
-                                for c in domain_component_map.get(domain_id, [])
+                                c for c in domain_component_map.get(domain_id, [])
                                 if str(c.get("id", c.get("number", c.get("description", "")))) == comp_id
                             ),
                             {"scoreList": []},
@@ -319,44 +314,17 @@ class CoTModelEvaluator:
                             "reasoning": ""
                         }
 
-                # Step 6: Schedule domain summaries
-                summary_futures: Dict[str, concurrent.futures.Future] = {}
-                for domain_id in domain_component_map:
-                    domain_def = next(
-                        (d for d in domains_list if str(d.get("id", d.get("number", d.get("name", "")))) == domain_id),
-                        {}
-                    )
+                # Step 6: (Optional domain summary generation could go here, 
+                # if CoTModelEvaluator implements domain-level CoT prompts similarly.)
+                # In the current design, we might directly generate domain summaries 
+                # using the BaseModelEvaluator style or skip if not needed.
 
-                    if domain_def.get("isManuallyScored", False):
-                        logger.info(f"Skipping summary for manually scored domain: {domain_id}")
-                        evaluation["domains"][domain_id]["summary"] = ""
-                        evaluation["domains"][domain_id]["summary_reasoning"] = ""
-                        continue
+            # (If domain summaries are generated, collect them here similar to BaseModelEvaluator.)
 
-                    domain_components = evaluation["domains"][domain_id]["components"]
-                    base_prompt = create_domain_summary_prompt(domain_def, self.framework, domain_components)
-                    future = executor.submit(self.generate_domain_summary, base_prompt)
-                    summary_futures[domain_id] = future
-
-                # Step 7: Collect domain summaries
-                for domain_id, future in summary_futures.items():
-                    try:
-                        domain_summary = future.result()
-                        evaluation["domains"][domain_id]["summary"] = domain_summary.get("summary", "")
-                        evaluation["domains"][domain_id]["summary_reasoning"] = domain_summary.get("reasoning", "")
-                    except Exception as exc:
-                        logger.error(f"Domain {domain_id} summary error: {exc}")
-                        evaluation["domains"][domain_id]["summary"] = ""
-                        evaluation["domains"][domain_id]["summary_reasoning"] = ""
-
-            # Step 8: Generate overall summary
-            overall_prompt = create_overall_summary_prompt(self.framework, evaluation["domains"])
-            overall_summary = self.generate_overall_summary(overall_prompt)
-            evaluation["summary"] = overall_summary.get("summary", "")
-            evaluation["summary_reasoning"] = overall_summary.get("reasoning", "")
+            # (If overall summary is generated, do that here similarly.)
 
             return {"success": True, "evaluation": evaluation}
 
         except Exception as e:
-            logger.error(f"Error generating framework-based evaluation: {str(e)}")
+            logger.error(f"Error generating CoT evaluation: {str(e)}")
             return {"success": False, "error": str(e)}
