@@ -17,8 +17,8 @@ import threading
 # llama-3.1-70b-versatile is not worth using -- almost as slow as gemini-2.0-flash
 # llama-3.3-70b-specdec is not available yet -- once it is, it will be the fastest model
 
-# Load environment variables
-load_dotenv()
+dotenv_path = os.path.join(os.path.dirname(__file__), '.env')
+load_dotenv(dotenv_path)
 
 # Initialize nest_asyncio
 nest_asyncio.apply()
@@ -93,12 +93,35 @@ def generate_ai_content(messages: Any, generation_config: Optional[Any] = None):
     else:
         # Use Gemini multimodal capabilities
         model = genai.GenerativeModel("gemini-2.0-flash")
-        # Directly pass the list of messages (text + media) if provided
         if isinstance(messages, list):
-            return model.generate_content(messages, generation_config=generation_config)
+            # Ensure each message dict uses 'parts' for text content
+            processed_messages = []
+            for msg in messages:
+                if isinstance(msg, dict):
+                    if 'parts' not in msg:  # Only convert if not already in parts format
+                        if 'content' in msg:
+                            if isinstance(msg['content'], str):
+                                # Wrap text content in a Part
+                                msg['parts'] = [{"text": str(msg['content'])}]
+                            elif isinstance(msg['content'], dict):
+                                # Content is already a media dict (e.g. audio); put it in parts
+                                msg['parts'] = [msg['content']]
+                            del msg['content']  # Remove old key after moving to parts
+                        elif 'text' in msg:
+                            # Wrap 'text' field content in a Part
+                            msg['parts'] = [{"text": str(msg['text'])}]
+                            del msg['text']
+                    processed_messages.append(msg)
+                else:
+                    # If the message is a raw string, wrap it as a user text part
+                    processed_messages.append({"role": "user", "parts": [{"text": str(msg)}]})
+            return model.generate_content(processed_messages, generation_config=generation_config)
         else:
-            # Wrap single string prompt
-            return model.generate_content([{"role": "user", "content": messages}], generation_config=generation_config)
+            # Wrap single string prompt as a user message with text part
+            return model.generate_content(
+                [{"role": "user", "parts": [{"text": str(messages)}]}],
+                generation_config=generation_config
+            )
 
 def upload_multimodal_file(file_path: str) -> Any:
     """

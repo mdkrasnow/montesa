@@ -59,7 +59,8 @@ class BaseModelEvaluator:
                 logger.warning(f"Unexpected LLM response format: {type(response)}")
                 return {"__error": "Invalid response format from LLM"}
         except Exception as e:
-            logger.error(f"Error generating AI content: {str(e)}")
+            # Print the error instead of using logger.error to avoid threading I/O issues in Jupyter
+            print(f"Error generating AI content: {e}")
             return {"__error": str(e)}
 
     def generate_component_evaluation(
@@ -89,6 +90,11 @@ class BaseModelEvaluator:
 
             if "score" in result:
                 raw_score = result.get("score")
+                try:
+                    raw_score = int(raw_score)
+                except ValueError:
+                    pass
+                
                 # Ensure the AI returned a valid score in the list
                 if raw_score not in score_list:
                     logger.warning(f"AI returned invalid score '{raw_score}' not in {score_list}.")

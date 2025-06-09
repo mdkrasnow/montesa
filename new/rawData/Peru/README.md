@@ -39,9 +39,13 @@ From the evaluatons:
 - only keep information that is L, M, H, N/A, or a single digit
 - if data is missing or of another type, replace with N/A
 
-Rows to remove:
-- non spanish rows and bilingual classes
+Rows removed:
 - rows where the audio clip is noted to be poor quality
 
-Columns to clean up:
-- remove extranous or unused columns
+Columns removed:
+- removed extranous or unused columns
+
+
+## Validation:
+
+- Accuracy compared to the human evaluators is defined as $1-d$ where $d$ is the normalized distance between the human and AI scores.
