@@ -1,19 +1,34 @@
 # Report for Model: **BaseEvaluator**
 
-## 1. Overall Distance Summary Statistics
+## 1. Distance and LLM-Human Agreement Summary Statistics
+
+### 1.1 Overall Distance
 
 |       |   overall_distance |
 |:------|-------------------:|
 | count |         118        |
-| mean  |           0.457702 |
-| std   |           0.184228 |
-| min   |           0.252968 |
-| 25%   |           0.359523 |
-| 50%   |           0.403539 |
-| 75%   |           0.466729 |
-| max   |           0.986    |
+| mean  |           0.455318 |
+| std   |           0.18844  |
+| min   |           0.243907 |
+| 25%   |           0.355299 |
+| 50%   |           0.396171 |
+| 75%   |           0.467939 |
+| max   |           1        |
 
-## 2. Inter-Rater Reliability (Cohen's Kappa)****
+### 1.2 LLM-Human Agreement
+
+|       |   agreement |
+|:------|------------:|
+| count |  118        |
+| mean  |    0.544682 |
+| std   |    0.18844  |
+| min   |    0        |
+| 25%   |    0.532061 |
+| 50%   |    0.603829 |
+| 75%   |    0.644701 |
+| max   |    0.756093 |
+
+## 2. Inter-Rater Reliability (Cohen's Kappa)
 
 | component_name                                                            |   kappa |
 |:--------------------------------------------------------------------------|--------:|
@@ -104,4 +119,4 @@
 | Time on Task          | Time on Task          |       0.456568 |
 | Classroom Culture     | Classroom Culture     |       0.413983 |
 | Instruction           | Instruction           |       0.446899 |
-| Socioemotional Skills | Socioemotional Skills |       0.517226 |
+| Socioemotional Skills | Socioemotional Skills |       0.507691 |

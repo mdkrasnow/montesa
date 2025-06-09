@@ -49,3 +49,28 @@ Columns removed:
 ## Validation:
 
 - Accuracy compared to the human evaluators is defined as $1-d$ where $d$ is the normalized distance between the human and AI scores.
+
+## 5.5 Cleaning;
+
+We justify some cleaining:
+
+https://chatgpt.com/c/68471a79-6f30-8006-a2b9-aa2aec8a2c05
+
+
+## 6 Performance: 
+
+We need to measure:
+
+---
+
+Time on Learning: exact agreement on 2 of 3 snapshots.
+
+Quality Elements: within 1 point of “master codes” on 8 of 9 high-inference elements per video.
+
+Failing on the first set of three videos prompts feedback and a second attempt; failure on the second attempt means no certification. 
+
+---
+
+^^ If the AI is able to pass this exam, it should be considered certified and good enough to be used as a substitute for human evaluation. We should run this test for each of the models we are considering in the performance notebook. We should find a valid comparison between the human exam and the AI exam. Options:
+- We could adminster a random selection of two sets of three observations from the test set to each model and see if it passes on the first set (first try) and if it needs to be re-administered on the second set (second try).
+- We could take the average performance across all observations in the test set and see if it passes overall on the exam on average. 

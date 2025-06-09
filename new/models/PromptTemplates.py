@@ -51,9 +51,9 @@ def create_generic_component_prompt(component: Dict[str, Any], observation_text:
     prompt = (
         f"{base_prompt}\n\n"
         f"{score_prompt}\n\n"
-        f"Context:\n{context}\n\n"
-        f"Observation:\n{observation_text}\n\n"
-        "Instructions:\n"
+        f"# Context:\n{context}\n\n"
+        f"# Transcript from classroom observation:\n{observation_text}\n\n"
+        "# Instructions:\n"
         "For each score option, think step by step and provide your reasoning under "
         "analysis.<score_option>. After reviewing all options, set the final chosen "
         "score under the key 'score'.\n"
@@ -61,6 +61,9 @@ def create_generic_component_prompt(component: Dict[str, Any], observation_text:
         "  - analysis: an object mapping each score to its chain-of-thought justification\n"
         "  - score: the selected score option\n"
         "Do not include any tokens, commentary, or formatting outside this JSON."
+        "In your analysis, you must iterate through each possible score option and provide analysis as for why or why not the score should be given."
+        "After reviewing all options, set the most likely chosen score under the key 'score'."
+        "It is possible, but very unlikely that the transcript does not contain enough information to justify a score. If in your deep analysis you cannot find a way to justify any of the scores, set the score to 'N/A'."
     )
     return prompt
 
