@@ -7,12 +7,12 @@
 |       |   overall_distance |
 |:------|-------------------:|
 | count |         118        |
-| mean  |           0.455318 |
-| std   |           0.18844  |
-| min   |           0.243907 |
-| 25%   |           0.355299 |
-| 50%   |           0.396171 |
-| 75%   |           0.467939 |
+| mean  |           0.552603 |
+| std   |           0.153478 |
+| min   |           0.38341  |
+| 25%   |           0.47128  |
+| 50%   |           0.50591  |
+| 75%   |           0.564788 |
 | max   |           1        |
 
 ### 1.2 LLM-Human Agreement
@@ -20,13 +20,13 @@
 |       |   agreement |
 |:------|------------:|
 | count |  118        |
-| mean  |    0.544682 |
-| std   |    0.18844  |
+| mean  |    0.447397 |
+| std   |    0.153478 |
 | min   |    0        |
-| 25%   |    0.532061 |
-| 50%   |    0.603829 |
-| 75%   |    0.644701 |
-| max   |    0.756093 |
+| 25%   |    0.435212 |
+| 50%   |    0.49409  |
+| 75%   |    0.52872  |
+| max   |    0.61659  |
 
 ## 2. Inter-Rater Reliability (Cohen's Kappa)
 
@@ -50,7 +50,6 @@
 | The teacher uses questions                                                |     nan |
 | The teacher uses prompts                                                  |     nan |
 | The teacher monitors most students                                        |     nan |
-| The teacher adjusts teaching to the level of students                     |     nan |
 | Feedback                                                                  |     nan |
 | The teacher provides specific comments for misunderstandings              |     nan |
 | The teacher provides specific comments for successes                      |     nan |
@@ -92,7 +91,6 @@
 | The teacher uses questions                                                |       0.351695 |
 | The teacher uses prompts                                                  |       0.622881 |
 | The teacher monitors most students                                        |       0.622881 |
-| The teacher adjusts teaching to the level of students                     |       0.385593 |
 | Feedback                                                                  |       0.40678  |
 | The teacher provides specific comments for misunderstandings              |       0.610169 |
 | The teacher provides specific comments for successes                      |       0.391949 |
@@ -116,7 +114,7 @@
 
 | domain_id             | domain_name           |   avg_distance |
 |:----------------------|:----------------------|---------------:|
-| Time on Task          | Time on Task          |       0.456568 |
-| Classroom Culture     | Classroom Culture     |       0.413983 |
-| Instruction           | Instruction           |       0.446899 |
-| Socioemotional Skills | Socioemotional Skills |       0.507691 |
+| Time on Task          | Time on Task          |       0.637712 |
+| Classroom Culture     | Classroom Culture     |       0.674435 |
+| Instruction           | Instruction           |       0.45292  |
+| Socioemotional Skills | Socioemotional Skills |       0.51926  |

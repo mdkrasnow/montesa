@@ -1,0 +1,9 @@
+Reliability Exam Summary
+======================
+
+Models Evaluated: 5
+Models Certified: 0
+Average Time Pass Rate: 21.8%
+Average Quality Pass Rate: 68.1%
+Best Time Model: BaseEvaluator-Validate-no-NA-data
+Best Quality Model: BaseEvaluator-Validate-no-NA-data

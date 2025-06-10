@@ -6,94 +6,88 @@
         "name": "Time on Task",
         "number": 1,
         "weight": 0.15,
-        "description": "Captures the extent to which the teacher provides a learning activity (Behavior 0.1) and students remain on task (Behavior 0.2) across three rapid snapshots (1\u201310 second scans at minutes 4\u20135, 9\u201310, and 14\u201315).",
+        "description": "Captures the extent to which the teacher provides a learning activity (Behavior 0.1) and students remain on task (Behavior 0.2) across three rapid snapshots (1–10 second scans at minutes 4–5, 9–10, and 14–15).",
         "components": [
           {
             "id": "Teacher provides learning activity - 1st Snapshot",
             "number": 1,
             "name": "Teacher provides learning activity - 1st Snapshot",
-            "description": "Teacher provides a learning activity to most students during the first snapshot (between 4:00\u20135:00 of the segment).",
+            "description": "Teacher provides a learning activity to most students during the first snapshot (between 4:00–5:00 of the segment).",
             "weight": 0.1667,
             "scoreList": [
               "Y",
-              "N",
-              "N/A"
+              "N"
             ],
             "isManuallyScored": false,
-            "rubric": "Y: At 4:00\u20135:00, teacher engages \u226580% of students in a content-related activity\u2014examples include lecturing, small-group/team work, independent worksheet completion, or reading (learning activity). N: At that time, teacher is performing nonlearning tasks\u2014examples include taking attendance, disciplining students, writing silently on board without engaging students\u2014or <80% of students are engaged. N/A: Cannot determine due to obstructed view or insufficient evidence. If Y=No, Behavior 0.2 is automatically N/A. The historical score proportions for this component are: {\"Y\": 0.88, \"N\": 0.1, \"N/A\": 0.02}"
+            "rubric": "Y: At 4:00–5:00, teacher engages ≥80% of students in a content-related activity—examples include lecturing, small-group/team work, independent worksheet completion, or reading (learning activity). N: At that time, teacher is performing nonlearning tasks—examples include taking attendance, disciplining students, writing silently on board without engaging students—or <80% of students are engaged. If Y=No, Behavior 0.2 is automatically scored as the lowest option. The historical score proportions for this component are: {\"Y\": 0.90, \"N\": 0.10}"
           },
           {
             "id": "Students are on task - 1st Snapshot",
             "number": 2,
             "name": "Students are on task - 1st Snapshot",
-            "description": "Students\u2019 on-task behavior during the first snapshot (4:00\u20135:00 of the segment).",
+            "description": "Students' on-task behavior during the first snapshot (4:00–5:00 of the segment).",
             "weight": 0.1667,
             "scoreList": [
               "L",
               "M",
-              "H",
-              "N/A"
+              "H"
             ],
             "isManuallyScored": false,
-            "rubric": "L: \u22656 students off-task (e.g., staring out window, whispering, passing notes, looking at observer) in scan. M: 2\u20135 off-task. H: 0\u20131 off-task. N/A: If Behavior 0.1=No or cannot determine due to visibility. The historical score proportions for this component are: {\"H\": 0.48, \"M\": 0.31, \"N/A\": 0.13, \"L\": 0.08}"
+            "rubric": "L: ≥6 students off-task (e.g., staring out window, whispering, passing notes, looking at observer) in scan. M: 2–5 off-task. H: 0–1 off-task. If Behavior 0.1=No, this component is automatically scored as L. The historical score proportions for this component are: {\"H\": 0.55, \"M\": 0.36, \"L\": 0.09}"
           },
           {
             "id": "Teacher provides learning activity - 2nd Snapshot",
             "number": 3,
             "name": "Teacher provides learning activity - 2nd Snapshot",
-            "description": "Teacher provides a learning activity to most students during the second snapshot (between 9:00\u201310:00 of the segment).",
+            "description": "Teacher provides a learning activity to most students during the second snapshot (between 9:00–10:00 of the segment).",
             "weight": 0.1667,
             "scoreList": [
               "Y",
-              "N",
-              "N/A"
+              "N"
             ],
             "isManuallyScored": false,
-            "rubric": "Y: At 9:00\u201310:00, teacher engages \u226580% of students in content-related activities (e.g., lecturing, group work, independent practice). N: At that time, teacher engages in nonlearning tasks or <80% of students are engaged. N/A: Cannot determine. If Y=No, Behavior 0.2 is automatically N/A. The historical score proportions for this component are: {\"Y\": 0.85, \"N\": 0.14, \"N/A\": 0.02}"
+            "rubric": "Y: At 9:00–10:00, teacher engages ≥80% of students in content-related activities (e.g., lecturing, group work, independent practice). N: At that time, teacher engages in nonlearning tasks or <80% of students are engaged. If Y=No, Behavior 0.2 is automatically scored as the lowest option. The historical score proportions for this component are: {\"Y\": 0.86, \"N\": 0.14}"
           },
           {
             "id": "Students are on task - 2nd Snapshot",
             "number": 4,
             "name": "Students are on task - 2nd Snapshot",
-            "description": "Students\u2019 on-task behavior during the second snapshot (9:00\u201310:00 of the segment).",
+            "description": "Students' on-task behavior during the second snapshot (9:00–10:00 of the segment).",
             "weight": 0.1667,
             "scoreList": [
               "L",
               "M",
-              "H",
-              "N/A"
+              "H"
             ],
             "isManuallyScored": false,
-            "rubric": "L: \u22656 students off-task in scan. M: 2\u20135 off-task. H: 0\u20131 off-task. N/A: If Behavior 0.1=No or insufficient visibility. The historical score proportions for this component are: {\"H\": 0.42, \"M\": 0.35, \"N/A\": 0.15, \"L\": 0.08}"
+            "rubric": "L: ≥6 students off-task in scan. M: 2–5 off-task. H: 0–1 off-task. If Behavior 0.1=No, this component is automatically scored as L. The historical score proportions for this component are: {\"H\": 0.49, \"M\": 0.41, \"L\": 0.10}"
           },
           {
             "id": "Teacher provides learning activity - 3rd Snapshot",
             "number": 5,
             "name": "Teacher provides learning activity - 3rd Snapshot",
-            "description": "Teacher provides a learning activity to most students during the third snapshot (between 14:00\u201315:00 of the segment).",
+            "description": "Teacher provides a learning activity to most students during the third snapshot (between 14:00–15:00 of the segment).",
             "weight": 0.1667,
             "scoreList": [
               "Y",
-              "N",
-              "N/A"
+              "N"
             ],
             "isManuallyScored": false,
-            "rubric": "Y: At 14:00\u201315:00, teacher engages \u226580% of students in content-related activities (e.g., lecturing, collaborative tasks, independent work). N: At that time, teacher performs noninstructional tasks or <80% engaged. N/A: Cannot determine. If Y=No, Behavior 0.2 is automatically N/A. The historical score proportions for this component are: {\"Y\": 0.91, \"N\": 0.08, \"N/A\": 0.02}"
+            "rubric": "Y: At 14:00–15:00, teacher engages ≥80% of students in content-related activities (e.g., lecturing, collaborative tasks, independent work). N: At that time, teacher performs noninstructional tasks or <80% engaged. If Y=No, Behavior 0.2 is automatically scored as the lowest option. The historical score proportions for this component are: {\"Y\": 0.92, \"N\": 0.08}"
           },
           {
             "id": "Students are on task - 3rd Snapshot",
             "number": 6,
             "name": "Students are on task - 3rd Snapshot",
-            "description": "Students\u2019 on-task behavior during the third snapshot (14:00\u201315:00 of the segment).",
+            "description": "Students' on-task behavior during the third snapshot (14:00–15:00 of the segment).",
             "weight": 0.1667,
             "scoreList": [
               "L",
               "M",
-              "H",
-              "N/A"
+              "H"
             ],
             "isManuallyScored": false,
-            "rubric": "L: \u22656 students off-task in the scan. M: 2\u20135 off-task. H: 0\u20131 off-task. N/A: If Behavior 0.1=No or cannot determine. The historical score proportions for this component are: {\"H\": 0.5, \"M\": 0.31, \"L\": 0.09, \"N/A\": 0.09}"
+            "rubric": "L: ≥6 students off-task in the scan. M: 2–5 off-task. H: 0–1 off-task. If Behavior 0.1=No, this component is automatically scored as L. The historical score proportions for this component are: {\"H\": 0.56, \"M\": 0.34, \"L\": 0.10}"
           }
         ]
       },
@@ -102,7 +96,7 @@
         "name": "Classroom Culture",
         "number": 2,
         "weight": 0.25,
-        "description": "Captures the teacher\u2019s creation of an emotionally supportive environment and the management of student behavior through two elements: Supportive Learning Environment and Positive Behavioral Expectations.",
+        "description": "Captures the teacher's creation of an emotionally supportive environment and the management of student behavior through two elements: Supportive Learning Environment and Positive Behavioral Expectations.",
         "components": [
           {
             "id": "Supportive Learning Environment",
@@ -115,26 +109,24 @@
               2,
               3,
               4,
-              5,
-              "N/A"
+              5
             ],
             "isManuallyScored": false,
-            "rubric": "1: Teacher shames, punishes, or humiliates students (e.g., yells, scolds, ridicules, physical punishment). 3: Teacher neither explicitly respects nor disrespects (neutral tone, no use of names, no positive cues). 5: Teacher consistently uses respectful language and nonverbal cues\u2014calls students by name, says \u201cplease\u201d/\u201cthank you,\u201d uses culturally relevant gestures. N/A: Insufficient evidence. The historical score proportions for this component are: {\"4\": 0.77, \"3\": 0.14, \"2\": 0.04, \"5\": 0.03, \"N/A\": 0.02}"
+            "rubric": "1: Teacher shames, punishes, or humiliates students (e.g., yells, scolds, ridicules, physical punishment). 3: Teacher neither explicitly respects nor disrespects (neutral tone, no use of names, no positive cues). 5: Teacher consistently uses respectful language and nonverbal cues—calls students by name, says \"please\"/\"thank you\", uses culturally relevant gestures. The historical score proportions for this component are: {\"4\": 0.79, \"3\": 0.14, \"2\": 0.04, \"5\": 0.03}"
           },
           {
             "id": "The teacher treats all students respectfully",
             "number": 2,
             "name": "The teacher treats all students respectfully",
-            "description": "Behavior 1.1 under SLE: Teacher\u2019s respectful tone and interactions.",
+            "description": "Behavior 1.1 under SLE: Teacher's respectful tone and interactions.",
             "weight": 0.1111,
             "scoreList": [
               "L",
               "M",
-              "H",
-              "N/A"
+              "H"
             ],
             "isManuallyScored": false,
-            "rubric": "L: Teacher exhibits disrespect (yells, scolds, humiliates, ridicules, physical punishment). M: Teacher refrains from disrespect but shows no explicit respect (neutral tone, no names, no culturally relevant greetings). H: Teacher uses students\u2019 names, says \u201cplease\u201d/\u201cthank you,\u201d or shows other culturally appropriate signs of respect. N/A: Not observable. The historical score proportions for this component are: {\"H\": 0.83, \"M\": 0.13, \"L\": 0.03, \"N/A\": 0.02}"
+            "rubric": "L: Teacher exhibits disrespect (yells, scolds, humiliates, ridicules, physical punishment). M: Teacher refrains from disrespect but shows no explicit respect (neutral tone, no names, no culturally relevant greetings). H: Teacher uses students' names, says \"please\"/\"thank you\", or shows other culturally appropriate signs of respect. The historical score proportions for this component are: {\"H\": 0.84, \"M\": 0.13, \"L\": 0.03}"
           },
           {
             "id": "The teacher uses positive language",
@@ -145,11 +137,10 @@
             "scoreList": [
               "L",
               "M",
-              "H",
-              "N/A"
+              "H"
             ],
             "isManuallyScored": false,
-            "rubric": "L: 0 instances of teacher positive language. M: 1\u20134 generic praises (e.g., \u201cgood job,\u201d \u201cwell done\u201d). H: \u22655 specific, encouraging statements (e.g., \u201cI like how you solved that problem,\u201d \u201cGreat work explaining your reasoning\u201d). N/A: Not observable. The historical score proportions for this component are: {\"H\": 0.68, \"M\": 0.24, \"L\": 0.07, \"N/A\": 0.02}"
+            "rubric": "L: 0 instances of teacher positive language. M: 1–4 generic praises (e.g., \"good job\", \"well done\"). H: ≥5 specific, encouraging statements (e.g., \"I like how you solved that problem\", \"Great work explaining your reasoning\"). The historical score proportions for this component are: {\"H\": 0.69, \"M\": 0.24, \"L\": 0.07}"
           },
           {
             "id": "The teacher responds to students needs",
@@ -160,11 +151,10 @@
             "scoreList": [
               "L",
               "M",
-              "H",
-              "N/A"
+              "H"
             ],
             "isManuallyScored": false,
-            "rubric": "L: Teacher ignores or dismisses student needs (e.g., does not address missing materials or requests). M: Teacher acknowledges need but does not resolve (e.g., says \u201cI hear you\u201d but takes no action). H: Teacher promptly and fully addresses needs (e.g., provides a pencil, rearranges partners for a student without one, grants bathroom break). N/A: No observable student needs. The historical score proportions for this component are: {\"N/A\": 0.64, \"H\": 0.26, \"M\": 0.06, \"L\": 0.03}"
+            "rubric": "L: Teacher ignores or dismisses student needs (e.g., does not address missing materials or requests). M: Teacher acknowledges need but does not resolve. H: Teacher promptly and fully addresses needs (e.g., provides a pencil, rearranges partners for a student without one, grants bathroom break). The historical score proportions for this component are: {\"H\": 0.74, \"M\": 0.17, \"L\": 0.09}"
           },
           {
             "id": "The teacher does not exhibit gender bias",
@@ -175,28 +165,26 @@
             "scoreList": [
               "L",
               "M",
-              "H",
-              "N/A"
+              "H"
             ],
             "isManuallyScored": false,
-            "rubric": "L: Teacher shows bias\u2014unequal opportunities, stereotypes, or explicit biased language. M: Teacher provides equal opportunities but does not challenge stereotypes. H: Teacher actively counters stereotypes and models equity (e.g., uses nontraditional role examples, alternates calling on boys and girls equally). N/A: Single-gender class or insufficient evidence. The historical score proportions for this component are: {\"M\": 0.95, \"N/A\": 0.03, \"L\": 0.02, \"H\": 0.01}"
+            "rubric": "L: Teacher shows bias—unequal opportunities, stereotypes, or explicit biased language. M: Teacher provides equal opportunities but does not challenge stereotypes. H: Teacher actively counters stereotypes and models equity (e.g., uses nontraditional role examples, alternates calling on boys and girls equally). The historical score proportions for this component are: {\"M\": 0.97, \"L\": 0.02, \"H\": 0.01}"
           },
           {
             "id": "Positive Behavioral Expectations",
             "number": 6,
             "name": "Positive Behavioral Expectations",
-            "description": "Overall rating of the teacher\u2019s setting and reinforcement of behavior norms (Element 2).",
+            "description": "Overall rating of the teacher's setting and reinforcement of behavior norms (Element 2).",
             "weight": 0.1111,
             "scoreList": [
               1,
               2,
               3,
               4,
-              5,
-              "N/A"
+              5
             ],
             "isManuallyScored": false,
-            "rubric": "1: Teacher does not set or reinforce any behavioral expectations. 3: Teacher sets general or superficial expectations (e.g., \u201cBe quiet\u201d). 5: Teacher co-creates clear, specific norms aligned to activities and reinforces them proactively (e.g., \u201cRaise your hand before speaking,\u201d \u201cWork silently in pairs\u201d). N/A: Insufficient evidence. The historical score proportions for this component are: {\"3\": 0.44, \"4\": 0.27, \"2\": 0.19, \"5\": 0.07, \"N/A\": 0.02, \"1\": 0.01}"
+            "rubric": "1: Teacher does not set or reinforce any behavioral expectations. 3: Teacher sets general or superficial expectations (e.g., \"Be quiet\"). 5: Teacher co-creates clear, specific norms aligned to activities and reinforces them proactively (e.g., \"Raise your hand before speaking,\" \"Work silently in pairs\"). The historical score proportions for this component are: {\"3\": 0.45, \"4\": 0.28, \"2\": 0.19, \"5\": 0.07, \"1\": 0.01}"
           },
           {
             "id": "The teacher sets clear behavioral expectations",
@@ -207,11 +195,10 @@
             "scoreList": [
               "L",
               "M",
-              "H",
-              "N/A"
+              "H"
             ],
             "isManuallyScored": false,
-            "rubric": "L: No explicit expectations stated. M: Broad or superficial expectations (e.g., \u201cBe good\u201d). H: Clear, specific expectations tied to each activity (e.g., \u201cWork quietly until I say stop,\u201d \u201cShare your ideas one at a time\u201d). N/A: Not observable. The historical score proportions for this component are: {\"H\": 0.7, \"M\": 0.22, \"L\": 0.06, \"N/A\": 0.02}"
+            "rubric": "L: No explicit expectations stated. M: Broad or superficial expectations (e.g., \"Be good\"). H: Clear, specific expectations tied to each activity (e.g., \"Work quietly until I say stop,\" \"Share your ideas one at a time\"). The historical score proportions for this component are: {\"H\": 0.71, \"M\": 0.23, \"L\": 0.06}"
           },
           {
             "id": "The teacher acknowledges positive student behavior",
@@ -222,11 +209,10 @@
             "scoreList": [
               "L",
               "M",
-              "H",
-              "N/A"
+              "H"
             ],
             "isManuallyScored": false,
-            "rubric": "L: No acknowledgement when students meet expectations. M: General praise (e.g., \u201cGood job\u201d). H: Specific, timely acknowledgement referencing behavior and expectations (e.g., \u201cI appreciate how Maria waited her turn before speaking\u201d). N/A: Not observable. The historical score proportions for this component are: {\"L\": 0.89, \"H\": 0.07, \"M\": 0.03, \"N/A\": 0.02}"
+            "rubric": "L: No acknowledgement when students meet expectations. M: General praise (e.g., \"Good job\"). H: Specific, timely acknowledgement referencing behavior and expectations (e.g., \"I appreciate how Maria waited her turn before speaking\"). The historical score proportions for this component are: {\"L\": 0.90, \"H\": 0.07, \"M\": 0.03}"
           },
           {
             "id": "The teacher redirects misbehavior",
@@ -237,11 +223,10 @@
             "scoreList": [
               "L",
               "M",
-              "H",
-              "N/A"
+              "H"
             ],
             "isManuallyScored": false,
-            "rubric": "L: Teacher focuses on misbehavior without guidance (e.g., \u201cStop that!\u201d). M: Redirects but without linking to expectations (e.g., \u201cQuiet down\u201d alone). H: Redirects by reinforcing expected behavior with explanation (e.g., \u201cPlease remember we raise hands; thanks for waiting until called upon\u201d). N/A: Not observable. The historical score proportions for this component are: {\"H\": 0.69, \"M\": 0.23, \"L\": 0.06, \"N/A\": 0.02}"
+            "rubric": "L: Teacher focuses on misbehavior without guidance (e.g., \"Stop that!\"). M: Redirects but without linking to expectations (e.g., \"Quiet down\" alone). H: Redirects by reinforcing expected behavior with explanation (e.g., \"Please remember we raise hands; thanks for waiting until called upon\"). The historical score proportions for this component are: {\"H\": 0.70, \"M\": 0.24, \"L\": 0.06}"
           }
         ]
       },
@@ -263,11 +248,10 @@
               2,
               3,
               4,
-              5,
-              "N/A"
+              5
             ],
             "isManuallyScored": false,
-            "rubric": "1: No clear objectives, explanations, or connections. 3: Some elements present but incomplete or superficial. 5: Teacher seamlessly articulates objectives, provides clear explanations, meaningful connections, and models tasks fully. N/A: Insufficient evidence. The historical score proportions for this component are: {\"3\": 0.54, \"4\": 0.22, \"2\": 0.17, \"5\": 0.03, \"N/A\": 0.02, \"1\": 0.02}"
+            "rubric": "1: No clear objectives, explanations, or connections. 3: Some elements present but incomplete or superficial. 5: Teacher seamlessly articulates objectives, provides clear explanations, meaningful connections, and models tasks fully. The historical score proportions for this component are: {\"3\": 0.55, \"4\": 0.23, \"2\": 0.17, \"5\": 0.03, \"1\": 0.02}"
           },
           {
             "id": "The teacher explicitly articulates learning objectives",
@@ -278,11 +262,10 @@
             "scoreList": [
               "L",
               "M",
-              "H",
-              "N/A"
+              "H"
             ],
             "isManuallyScored": false,
-            "rubric": "L: No objectives stated or inferable. M: Broad or inferable objectives only (e.g., \u201cToday we will read a story\u201d). H: Specific objectives stated and referenced (e.g., \u201cToday you will learn to identify action verbs by circling them in sentences\u201d). N/A: Not observable. The historical score proportions for this component are: {\"M\": 0.46, \"H\": 0.38, \"L\": 0.14, \"N/A\": 0.02}"
+            "rubric": "L: No objectives stated or inferable. M: Broad or inferable objectives only (e.g., \"Today we will read a story\"). H: Specific objectives stated and referenced (e.g., \"Today you will learn to identify action verbs by circling them in sentences\"). The historical score proportions for this component are: {\"M\": 0.47, \"H\": 0.39, \"L\": 0.14}"
           },
           {
             "id": "The teacher's explanation of content is clear",
@@ -293,11 +276,10 @@
             "scoreList": [
               "L",
               "M",
-              "H",
-              "N/A"
+              "H"
             ],
             "isManuallyScored": false,
-            "rubric": "L: Explanations are confusing, jargon-heavy, or absent. M: Partially clear but incomplete or missing definitions. H: Consistently clear, logical explanations\u2014defines terms, uses concrete examples. N/A: Not observable. The historical score proportions for this component are: {\"H\": 0.75, \"M\": 0.17, \"L\": 0.06, \"N/A\": 0.02}"
+            "rubric": "L: Explanations are confusing, jargon-heavy, or absent. M: Partially clear but incomplete or missing definitions. H: Consistently clear, logical explanations—defines terms, uses concrete examples. The historical score proportions for this component are: {\"H\": 0.77, \"M\": 0.17, \"L\": 0.06}"
           },
           {
             "id": "The teacher makes connections in the lesson",
@@ -308,11 +290,10 @@
             "scoreList": [
               "L",
               "M",
-              "H",
-              "N/A"
+              "H"
             ],
             "isManuallyScored": false,
-            "rubric": "L: No connections made to prior knowledge or daily life. M: Superficial or unclear connections (e.g., mentions real-world objects without linking to objective). H: Explicit, meaningful connections contextualized to students\u2019 experiences (e.g., links multiplication to buying fruits at market). N/A: Not observable. The historical score proportions for this component are: {\"L\": 0.55, \"H\": 0.23, \"M\": 0.2, \"N/A\": 0.02}"
+            "rubric": "L: No connections made to prior knowledge or daily life. M: Superficial or unclear connections (e.g., mentions real-world objects without linking to objective). H: Explicit, meaningful connections contextualized to students' experiences (e.g., links multiplication to buying fruits at market). The historical score proportions for this component are: {\"L\": 0.56, \"H\": 0.24, \"M\": 0.20}"
           },
           {
             "id": "The teacher models by enacting or thinking aloud",
@@ -323,11 +304,10 @@
             "scoreList": [
               "L",
               "M",
-              "H",
-              "N/A"
+              "H"
             ],
             "isManuallyScored": false,
-            "rubric": "L: No modeling or think-aloud. M: Partial modeling or partial think-aloud (e.g., shows one step without explaining), or insufficient practice opportunity. H: Full modeling with simultaneous think-aloud\u2014demonstrates entire process and narrates reasoning, with clear student practice follow-up. N/A: Not observable. The historical score proportions for this component are: {\"L\": 0.64, \"M\": 0.19, \"H\": 0.16, \"N/A\": 0.02}"
+            "rubric": "L: No modeling or think-aloud. M: Partial modeling or partial think-aloud (e.g., shows one step without explaining), or insufficient practice opportunity. H: Full modeling with simultaneous think-aloud—demonstrates entire process and narrates reasoning, with clear student practice follow-up. The historical score proportions for this component are: {\"L\": 0.65, \"M\": 0.19, \"H\": 0.16}"
           },
           {
             "id": "Checks for understanding",
@@ -340,11 +320,10 @@
               2,
               3,
               4,
-              5,
-              "N/A"
+              5
             ],
             "isManuallyScored": false,
-            "rubric": "1: No checks or only unverified whole-class prompts. 3: Some checks (e.g., calls on volunteers) without broad monitoring or follow-up. 5: Regular, systematic checks\u2014open-ended questions, monitoring \u226575% of students, adjusts instruction based on evidence. N/A: Not observable. The historical score proportions for this component are: {\"3\": 0.37, \"2\": 0.32, \"4\": 0.17, \"5\": 0.08, \"1\": 0.03, \"N/A\": 0.02}"
+            "rubric": "1: No checks or only unverified whole-class prompts. 3: Some checks (e.g., calls on volunteers) without broad monitoring or follow-up. 5: Regular, systematic checks—open-ended questions, monitoring ≥75% of students, adjusts instruction based on evidence. The historical score proportions for this component are: {\"3\": 0.38, \"2\": 0.33, \"4\": 0.18, \"5\": 0.08, \"1\": 0.03}"
           },
           {
             "id": "The teacher uses questions",
@@ -355,11 +334,10 @@
             "scoreList": [
               "L",
               "M",
-              "H",
-              "N/A"
+              "H"
             ],
             "isManuallyScored": false,
-            "rubric": "L: Only closed questions, no follow-up. M: Some open questions (\u22652) but limited probing. H: Regular open-ended questions with follow-up and building on student responses. N/A: Not observable. The historical score proportions for this component are: {\"M\": 0.57, \"H\": 0.31, \"L\": 0.11, \"N/A\": 0.02}"
+            "rubric": "L: Only closed questions, no follow-up. M: Some open questions (≥2) but limited probing. H: Regular open-ended questions with follow-up and building on student responses. The historical score proportions for this component are: {\"M\": 0.58, \"H\": 0.31, \"L\": 0.11}"
           },
           {
             "id": "The teacher uses prompts",
@@ -370,11 +348,10 @@
             "scoreList": [
               "L",
               "M",
-              "H",
-              "N/A"
+              "H"
             ],
             "isManuallyScored": false,
-            "rubric": "L: Only factual prompts. M: Some elaboration prompts but limited. H: Regular prompts for justification, evidence, and deeper reasoning (e.g., \u201cCan you explain why?\u201d). N/A: No independent/group work observed. The historical score proportions for this component are: {\"H\": 0.43, \"N/A\": 0.29, \"M\": 0.23, \"L\": 0.05}"
+            "rubric": "L: Only factual prompts. M: Some elaboration prompts but limited. H: Regular prompts for justification, evidence, and deeper reasoning (e.g., \"Can you explain why?\"). The historical score proportions for this component are: {\"H\": 0.61, \"M\": 0.32, \"L\": 0.07}"
           },
           {
             "id": "The teacher monitors most students",
@@ -385,11 +362,10 @@
             "scoreList": [
               "L",
               "M",
-              "H",
-              "N/A"
+              "H"
             ],
             "isManuallyScored": false,
-            "rubric": "L: Teacher remains stationary or scans <50% of students. M: Circulates but monitors 50\u201375%. H: Systematically supports >75% of students during independent/group work. N/A: No group/independent work. The historical score proportions for this component are: {\"L\": 0.69, \"M\": 0.14, \"H\": 0.14, \"N/A\": 0.02}"
+            "rubric": "L: Teacher remains stationary or scans <50% of students. M: Circulates but monitors 50–75%. H: Systematically supports >75% of students during independent/group work. The historical score proportions for this component are: {\"L\": 0.71, \"M\": 0.15, \"H\": 0.14}"
           },
           {
             "id": "Feedback",
@@ -400,11 +376,10 @@
             "scoreList": [
               "L",
               "M",
-              "H",
-              "N/A"
+              "H"
             ],
             "isManuallyScored": false,
-            "rubric": "L: Evaluative only (\u2018yes/no\u2019) without substance. M: Occasional or generic feedback. H: Frequent, specific, actionable feedback guiding correction and reflection. N/A: Not observable. The historical score proportions for this component are: {\"M\": 0.36, \"L\": 0.34, \"H\": 0.28, \"N/A\": 0.02}"
+            "rubric": "L: Evaluative only ('yes/no') without substance. M: Occasional or generic feedback. H: Frequent, specific, actionable feedback guiding correction and reflection. The historical score proportions for this component are: {\"M\": 0.37, \"L\": 0.35, \"H\": 0.28}"
           },
           {
             "id": "The teacher provides specific comments for misunderstandings",
@@ -415,11 +390,10 @@
             "scoreList": [
               "L",
               "M",
-              "H",
-              "N/A"
+              "H"
             ],
             "isManuallyScored": false,
-            "rubric": "L: No or generic feedback on errors. M: Identifies misunderstanding but no scaffolding (e.g., \u201cThat\u2019s wrong\u201d). H: Detailed prompts guiding correction (e.g., \u201cYou swapped numerator and denominator\u2014try reversing them\u201d). N/A: No misunderstandings observed. The historical score proportions for this component are: {\"L\": 0.81, \"M\": 0.1, \"H\": 0.07, \"N/A\": 0.02}"
+            "rubric": "L: No or generic feedback on errors. M: Identifies misunderstanding but no scaffolding (e.g., \"That's wrong\"). H: Detailed prompts guiding correction (e.g., \"You swapped numerator and denominator—try reversing them\"). The historical score proportions for this component are: {\"L\": 0.83, \"M\": 0.10, \"H\": 0.07}"
           },
           {
             "id": "The teacher provides specific comments for successes",
@@ -428,13 +402,14 @@
             "description": "Behavior 5.2 under Feedback: Reinforcement of successes.",
             "weight": 0.05,
             "scoreList": [
-              "L",
-              "M",
-              "H",
-              "N/A"
+              1,
+              2,
+              3,
+              4,
+              5
             ],
             "isManuallyScored": false,
-            "rubric": "L: No recognition or generic praise. M: Specific but infrequent acknowledgment. H: Consistent strategic use of exemplars and reflective discussion (e.g., \u201cI like how you used evidence from the text to support your answer\u201d). N/A: No successes observed. The historical score proportions for this component are: {\"2\": 0.4, \"3\": 0.23, \"1\": 0.16, \"4\": 0.12, \"5\": 0.08, \"N/A\": 0.02}"
+            "rubric": "1: No recognition or generic praise. 3: Specific but infrequent acknowledgment. 5: Consistent strategic use of exemplars and reflective discussion (e.g., \"I like how you used evidence from the text to support your answer\"). The historical score proportions for this component are: {\"2\": 0.41, \"3\": 0.23, \"1\": 0.16, \"4\": 0.12, \"5\": 0.08}"
           },
           {
             "id": "Critical Thinking",
@@ -445,11 +420,10 @@
             "scoreList": [
               "L",
               "M",
-              "H",
-              "N/A"
+              "H"
             ],
             "isManuallyScored": false,
-            "rubric": "L: No higher-order prompts or tasks. M: Occasional open-ended questions without follow-up or superficial tasks. H: Regular open-ended questioning, challenging tasks, and follow-up. N/A: Not observable. The historical score proportions for this component are: {\"L\": 0.56, \"M\": 0.21, \"H\": 0.21, \"N/A\": 0.02}"
+            "rubric": "L: No higher-order prompts or tasks. M: Occasional open-ended questions without follow-up or superficial tasks. H: Regular open-ended questioning, challenging tasks, and follow-up. The historical score proportions for this component are: {\"L\": 0.57, \"M\": 0.21, \"H\": 0.22}"
           },
           {
             "id": "The teacher asks open-ended questions",
@@ -460,11 +434,10 @@
             "scoreList": [
               "L",
               "M",
-              "H",
-              "N/A"
+              "H"
             ],
             "isManuallyScored": false,
-            "rubric": "L: \u22641 open-ended question, no follow-up. M: 2 open-ended questions, limited probing. H: \u22653 open-ended questions with deep follow-up building on student responses. N/A: Not observable. The historical score proportions for this component are: {\"M\": 0.59, \"L\": 0.25, \"H\": 0.14, \"N/A\": 0.02}"
+            "rubric": "L: ≤1 open-ended question, no follow-up. M: 2 open-ended questions, limited probing. H: ≥3 open-ended questions with deep follow-up building on student responses. The historical score proportions for this component are: {\"M\": 0.60, \"L\": 0.26, \"H\": 0.14}"
           },
           {
             "id": "The teacher provides thinking tasks",
@@ -475,11 +448,10 @@
             "scoreList": [
               "L",
               "M",
-              "H",
-              "N/A"
+              "H"
             ],
             "isManuallyScored": false,
-            "rubric": "L: Rote tasks only (e.g., copying facts). M: Some analytical tasks but limited depth (e.g., compare two examples). H: Complex, novel problem-solving or interpretation tasks requiring higher-order thinking. N/A: Not observable. The historical score proportions for this component are: {\"M\": 0.55, \"L\": 0.26, \"H\": 0.17, \"N/A\": 0.02}"
+            "rubric": "L: Rote tasks only (e.g., copying facts). M: Some analytical tasks but limited depth (e.g., compare two examples). H: Complex, novel problem-solving or interpretation tasks requiring higher-order thinking. The historical score proportions for this component are: {\"M\": 0.56, \"L\": 0.27, \"H\": 0.17}"
           },
           {
             "id": "Students ask open-ended questions or perform thinking tasks",
@@ -492,11 +464,10 @@
               2,
               3,
               4,
-              5,
-              "N/A"
+              5
             ],
             "isManuallyScored": false,
-            "rubric": "1: No student open questions or analytical tasks. 3: Some students perform limited thinking tasks or ask questions. 5: Class collectively leads deep critical thinking\u2014students generate questions and engage in analysis. N/A: Not observable. The historical score proportions for this component are: {\"2\": 0.41, \"3\": 0.35, \"1\": 0.13, \"4\": 0.09, \"N/A\": 0.02, \"5\": 0.01}"
+            "rubric": "1: No student open questions or analytical tasks. 3: Some students perform limited thinking tasks or ask questions. 5: Class collectively leads deep critical thinking—students generate questions and engage in analysis. The historical score proportions for this component are: {\"2\": 0.41, \"3\": 0.35, \"1\": 0.13, \"4\": 0.10, \"5\": 0.01}"
           }
         ]
       },
@@ -505,7 +476,7 @@
         "name": "Socioemotional Skills",
         "number": 4,
         "weight": 0.25,
-        "description": "Teaching practices that develop student autonomy, perseverance, and social\u2013collaborative skills.",
+        "description": "Teaching practices that develop student autonomy, perseverance, and social–collaborative skills.",
         "components": [
           {
             "id": "Autonomy",
@@ -516,11 +487,10 @@
             "scoreList": [
               "L",
               "M",
-              "H",
-              "N/A"
+              "H"
             ],
             "isManuallyScored": false,
-            "rubric": "L: No meaningful student choices or roles provided. M: Superficial choices (e.g., choose seat) or administrative roles. H: Substantive academic choices and roles central to learning (e.g., select topics, lead discussions). N/A: Not observable. The historical score proportions for this component are: {\"L\": 0.82, \"M\": 0.12, \"H\": 0.04, \"N/A\": 0.02}"
+            "rubric": "L: No meaningful student choices or roles provided. M: Superficial choices (e.g., choose seat) or administrative roles. H: Substantive academic choices and roles central to learning (e.g., select topics, lead discussions). The historical score proportions for this component are: {\"L\": 0.84, \"M\": 0.12, \"H\": 0.04}"
           },
           {
             "id": "The teacher provides students with choices",
@@ -531,11 +501,10 @@
             "scoreList": [
               "L",
               "M",
-              "H",
-              "N/A"
+              "H"
             ],
             "isManuallyScored": false,
-            "rubric": "L: No choices offered. M: Superficial choices unrelated to academic goals (e.g., pick group partner). H: Substantive choices linked to objectives (e.g., choose problem-solving method, select project topic). N/A: Not observable. The historical score proportions for this component are: {\"M\": 0.47, \"L\": 0.32, \"H\": 0.19, \"N/A\": 0.02}"
+            "rubric": "L: No choices offered. M: Superficial choices unrelated to academic goals (e.g., pick group partner). H: Substantive choices linked to objectives (e.g., choose problem-solving method, select project topic). The historical score proportions for this component are: {\"M\": 0.48, \"L\": 0.33, \"H\": 0.19}"
           },
           {
             "id": "The teacher provides students with opportunities to take meaningful roles",
@@ -546,11 +515,10 @@
             "scoreList": [
               "L",
               "M",
-              "H",
-              "N/A"
+              "H"
             ],
             "isManuallyScored": false,
-            "rubric": "L: No roles assigned. M: Administrative roles only (e.g., line leader). H: Roles central to learning (e.g., peer tutor, group facilitator). N/A: Not observable. The historical score proportions for this component are: {\"M\": 0.48, \"H\": 0.31, \"L\": 0.19, \"N/A\": 0.02}"
+            "rubric": "L: No roles assigned. M: Administrative roles only (e.g., line leader). H: Roles central to learning (e.g., peer tutor, group facilitator). The historical score proportions for this component are: {\"M\": 0.49, \"H\": 0.32, \"L\": 0.19}"
           },
           {
             "id": "Students volunteer to participate in the classroom",
@@ -563,11 +531,10 @@
               2,
               3,
               4,
-              5,
-              "N/A"
+              5
             ],
             "isManuallyScored": false,
-            "rubric": "1: No volunteers. 3: Some volunteers but limited. 5: Virtually all students self-initiate participation without prompting. N/A: Not observable. The historical score proportions for this component are: {\"2\": 0.83, \"3\": 0.09, \"4\": 0.03, \"1\": 0.03, \"N/A\": 0.02}"
+            "rubric": "1: No volunteers. 3: Some volunteers but limited. 5: Virtually all students self-initiate participation without prompting. The historical score proportions for this component are: {\"2\": 0.85, \"3\": 0.09, \"4\": 0.03, \"1\": 0.03}"
           },
           {
             "id": "Perseverance",
@@ -578,11 +545,10 @@
             "scoreList": [
               "L",
               "M",
-              "H",
-              "N/A"
+              "H"
             ],
             "isManuallyScored": false,
-            "rubric": "L: Focus on innate ability; negative framing of failure. M: Neutral messages about effort. H: Consistent growth-mindset language and goal-setting encouragement. N/A: Not observable. The historical score proportions for this component are: {\"L\": 0.86, \"M\": 0.06, \"H\": 0.06, \"N/A\": 0.02}"
+            "rubric": "L: Focus on innate ability; negative framing of failure. M: Neutral messages about effort. H: Consistent growth-mindset language and goal-setting encouragement. The historical score proportions for this component are: {\"L\": 0.88, \"M\": 0.06, \"H\": 0.06}"
           },
           {
             "id": "The teacher acknowledges students' efforts",
@@ -593,11 +559,10 @@
             "scoreList": [
               "L",
               "M",
-              "H",
-              "N/A"
+              "H"
             ],
             "isManuallyScored": false,
-            "rubric": "L: No effort acknowledgement. M: General comments (e.g., \u201cGood work\u201d). H: Specific, process-focused acknowledgments (e.g., \u201cI notice how carefully you checked each step\u201d). N/A: Not observable. The historical score proportions for this component are: {\"M\": 0.89, \"H\": 0.06, \"L\": 0.03, \"N/A\": 0.02}"
+            "rubric": "L: No effort acknowledgement. M: General comments (e.g., \"Good work\"). H: Specific, process-focused acknowledgments (e.g., \"I notice how carefully you checked each step\"). The historical score proportions for this component are: {\"M\": 0.91, \"H\": 0.06, \"L\": 0.03}"
           },
           {
             "id": "The teacher has a positive attitude towards students' challenges",
@@ -608,11 +573,10 @@
             "scoreList": [
               "L",
               "M",
-              "H",
-              "N/A"
+              "H"
             ],
             "isManuallyScored": false,
-            "rubric": "L: Negative or impatient responses to struggle. M: Neutral responses without encouragement. H: Encouraging tone and coping strategies (e.g., \u201cMistakes help us learn\u2014let\u2019s try again\u201d). N/A: Not observable. The historical score proportions for this component are: {\"L\": 0.95, \"H\": 0.02, \"N/A\": 0.02, \"M\": 0.02}"
+            "rubric": "L: Negative or impatient responses to struggle. M: Neutral responses without encouragement. H: Encouraging tone and coping strategies (e.g., \"Mistakes help us learn—let's try again\"). The historical score proportions for this component are: {\"L\": 0.96, \"H\": 0.02, \"M\": 0.02}"
           },
           {
             "id": "The teacher encourages goal-setting",
@@ -625,11 +589,10 @@
               2,
               3,
               4,
-              5,
-              "N/A"
+              5
             ],
             "isManuallyScored": false,
-            "rubric": "1: No goal-setting. 3: Encourages either short- or long-term goals generally. 5: Co-creates measurable short- and long-term growth plans with students regularly. N/A: Not observable. The historical score proportions for this component are: {\"1\": 0.38, \"2\": 0.25, \"3\": 0.19, \"4\": 0.12, \"5\": 0.03, \"N/A\": 0.02}"
+            "rubric": "1: No goal-setting. 3: Encourages either short- or long-term goals generally. 5: Co-creates measurable short- and long-term growth plans with students regularly. The historical score proportions for this component are: {\"1\": 0.39, \"2\": 0.26, \"3\": 0.20, \"4\": 0.12, \"5\": 0.03}"
           },
           {
             "id": "Social & Collaborative Skills",
@@ -640,11 +603,10 @@
             "scoreList": [
               "L",
               "M",
-              "H",
-              "N/A"
+              "H"
             ],
             "isManuallyScored": false,
-            "rubric": "L: No structured peer interaction. M: Superficial pair/group work (e.g., share materials). H: Rich interdependent collaboration with explicit social\u2013emotional scaffolds and facilitation. N/A: Not observable. The historical score proportions for this component are: {\"L\": 0.57, \"H\": 0.29, \"M\": 0.13, \"N/A\": 0.02}"
+            "rubric": "L: No structured peer interaction. M: Superficial pair/group work (e.g., share materials). H: Rich interdependent collaboration with explicit social–emotional scaffolds and facilitation. The historical score proportions for this component are: {\"L\": 0.58, \"H\": 0.29, \"M\": 0.13}"
           },
           {
             "id": "The teacher promotes students' collaboration",
@@ -655,11 +617,10 @@
             "scoreList": [
               "L",
               "M",
-              "H",
-              "N/A"
+              "H"
             ],
             "isManuallyScored": false,
-            "rubric": "L: No collaborative tasks. M: Superficial pair/group work without interdependence. H: Well-structured interdependent collaboration\u2014students rely on each other to complete tasks. N/A: Not observable. The historical score proportions for this component are: {\"L\": 0.7, \"M\": 0.2, \"H\": 0.08, \"N/A\": 0.02}"
+            "rubric": "L: No collaborative tasks. M: Superficial pair/group work without interdependence. H: Well-structured interdependent collaboration—students rely on each other to complete tasks. The historical score proportions for this component are: {\"L\": 0.71, \"M\": 0.21, \"H\": 0.08}"
           },
           {
             "id": "The teacher promotes students' interpersonal skills",
@@ -670,11 +631,10 @@
             "scoreList": [
               "L",
               "M",
-              "H",
-              "N/A"
+              "H"
             ],
             "isManuallyScored": false,
-            "rubric": "L: Ignores social skills development. M: Basic polite prompts (e.g., \u201cUse your manners\u201d). H: Explicit teaching of empathy, perspective-taking, and conflict resolution strategies. N/A: Not observable. The historical score proportions for this component are: {\"L\": 0.57, \"H\": 0.25, \"M\": 0.17, \"N/A\": 0.02}"
+            "rubric": "L: Ignores social skills development. M: Basic polite prompts (e.g., \"Use your manners\"). H: Explicit teaching of empathy, perspective-taking, and conflict resolution strategies. The historical score proportions for this component are: {\"L\": 0.58, \"H\": 0.25, \"M\": 0.17}"
           }
         ]
       }
@@ -683,6 +643,6 @@
     "decimals_allowed": true
   },
   "name": "TEACH 1.0 Classroom Observation Framework",
-  "description": "Based on the World Bank\u2019s TEACH tool, this framework evaluates both the time students spend engaged in learning and the quality of teaching practices across culture, instruction, and socioemotional development. It includes low-inference snapshots and high-inference rubrics with specific evidence examples drawn from the TEACH manual for reliable, evidence-based scoring.",
+  "description": "Based on the World Bank's TEACH tool, this framework evaluates both the time students spend engaged in learning and the quality of teaching practices across culture, instruction, and socioemotional development. It includes low-inference snapshots and high-inference rubrics with specific evidence examples drawn from the TEACH manual for reliable, evidence-based scoring.",
   "framework_id": "teach_1_0"
 }

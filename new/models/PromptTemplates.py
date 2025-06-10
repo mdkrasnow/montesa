@@ -63,7 +63,6 @@ def create_generic_component_prompt(component: Dict[str, Any], observation_text:
         "Do not include any tokens, commentary, or formatting outside this JSON."
         "In your analysis, you must iterate through each possible score option and provide analysis as for why or why not the score should be given."
         "After reviewing all options, set the most likely chosen score under the key 'score'."
-        "It is possible, but very unlikely that the transcript does not contain enough information to justify a score. If in your deep analysis you cannot find a way to justify any of the scores, set the score to 'N/A'."
     )
     return prompt
 
