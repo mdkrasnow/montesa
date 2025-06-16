@@ -6,14 +6,14 @@ Reliability Exam Summary
 Models: 4-BaseEvaluator-Validate-no-NA-data, 5-BaseEvaluator-Validate-no-NA-data-g-25-flash, 1-BaseEvaluator, 2-BaseEvaluator-Validate, 3-BaseEvaluator-Validate-no-NA
 
 🎯 CERTIFICATION RESULTS:
-- Models Certified: 2 of 5 (40.0%)
-- Models Failed: 3 of 5 (60.0%)
+- Models Certified: 4 of 5 (80.0%)
+- Models Failed: 1 of 5 (20.0%)
 
 📈 PERFORMANCE BENCHMARKS:
-- Average Segment Pass Rate: 70.7%
-- Best Model: 4-BaseEvaluator-Validate-no-NA-data (83.5%)
-- Worst Model: 1-BaseEvaluator (41.5%)
+- Average Segment Pass Rate: 81.4%
+- Best Model: 5-BaseEvaluator-Validate-no-NA-data-g-25-flash (91.7%)
+- Worst Model: 1-BaseEvaluator (58.5%)
 ======================
 
 Models Evaluated: 5
-Models Certified: 2
+Models Certified: 4
