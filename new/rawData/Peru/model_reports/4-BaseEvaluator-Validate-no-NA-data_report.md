@@ -6,26 +6,26 @@
 
 |       |   overall_distance |
 |:------|-------------------:|
-| count |        109         |
-| mean  |          0.342855  |
-| std   |          0.0801725 |
+| count |         39         |
+| mean  |          0.34232   |
+| std   |          0.0757245 |
 | min   |          0.21457   |
-| 25%   |          0.300523  |
-| 50%   |          0.334102  |
-| 75%   |          0.384146  |
-| max   |          0.772923  |
+| 25%   |          0.276686  |
+| 50%   |          0.345162  |
+| 75%   |          0.402666  |
+| max   |          0.512697  |
 
 ### 1.2 LLM-Human Agreement
 
 |       |   agreement |
 |:------|------------:|
-| count | 109         |
-| mean  |   0.657145  |
-| std   |   0.0801725 |
-| min   |   0.227077  |
-| 25%   |   0.615854  |
-| 50%   |   0.665898  |
-| 75%   |   0.699477  |
+| count |  39         |
+| mean  |   0.65768   |
+| std   |   0.0757245 |
+| min   |   0.487303  |
+| 25%   |   0.597334  |
+| 50%   |   0.654838  |
+| 75%   |   0.723314  |
 | max   |   0.78543   |
 
 ## 2. Inter-Rater Reliability (Cohen's Kappa)
@@ -79,54 +79,54 @@
 
 | component_name                                                            |   avg_distance |
 |:--------------------------------------------------------------------------|---------------:|
-| Teacher provides learning activity - 1st Snapshot                         |      0.12844   |
-| Students are on task - 1st Snapshot                                       |      0.366972  |
-| Teacher provides learning activity - 2nd Snapshot                         |      0.183486  |
-| Students are on task - 2nd Snapshot                                       |      0.440367  |
-| Teacher provides learning activity - 3rd Snapshot                         |      0.137615  |
-| Students are on task - 3rd Snapshot                                       |      0.417431  |
-| Supportive Learning Environment                                           |      0.107798  |
-| The teacher treats all students respectfully                              |      0.188073  |
-| The teacher uses positive language                                        |      0.43578   |
-| The teacher responds to students needs                                    |      0.729358  |
-| The teacher does not exhibit gender bias                                  |      0.0504587 |
-| Positive Behavioral Expectations                                          |      0.206422  |
-| The teacher sets clear behavioral expectations                            |      0.490826  |
-| The teacher acknowledges positive student behavior                        |      0.399083  |
-| The teacher redirects misbehavior                                         |      0.33945   |
-| Lesson Facilitation                                                       |      0.135321  |
-| The teacher explicitly articulates learning objectives                    |      0.37156   |
-| The teacher's explanation of content is clear                             |      0.458716  |
-| The teacher makes connections in the lesson                               |      0.344037  |
-| The teacher models by enacting or thinking aloud                          |      0.275229  |
-| Checks for understanding                                                  |      0.208716  |
-| The teacher uses questions                                                |      0.288991  |
-| The teacher uses prompts                                                  |      0.573394  |
-| The teacher monitors most students                                        |      0.288991  |
-| Feedback                                                                  |      0.321101  |
-| The teacher provides specific comments for misunderstandings              |      0.330275  |
-| The teacher provides specific comments for successes                      |      0.25      |
-| Critical Thinking                                                         |      0.284404  |
-| The teacher asks open-ended questions                                     |      0.247706  |
-| The teacher provides thinking tasks                                       |      0.211009  |
-| Students ask open-ended questions or perform thinking tasks               |      0.197248  |
-| Autonomy                                                                  |      0.252294  |
-| The teacher provides students with choices                                |      0.412844  |
-| The teacher provides students with opportunities to take meaningful roles |      0.495413  |
-| Students volunteer to participate in the classroom                        |      0.176606  |
-| Perseverance                                                              |      0.46789   |
-| The teacher acknowledges students' efforts                                |      0.224771  |
-| The teacher has a positive attitude towards students' challenges          |      0.53211   |
-| The teacher encourages goal-setting                                       |      0.266055  |
-| Social & Collaborative Skills                                             |      0.362385  |
-| The teacher promotes students' collaboration                              |      0.266055  |
-| The teacher promotes students' interpersonal skills                       |      0.431193  |
+| Teacher provides learning activity - 1st Snapshot                         |      0.179487  |
+| Students are on task - 1st Snapshot                                       |      0.307692  |
+| Teacher provides learning activity - 2nd Snapshot                         |      0.153846  |
+| Students are on task - 2nd Snapshot                                       |      0.435897  |
+| Teacher provides learning activity - 3rd Snapshot                         |      0.153846  |
+| Students are on task - 3rd Snapshot                                       |      0.474359  |
+| Supportive Learning Environment                                           |      0.141026  |
+| The teacher treats all students respectfully                              |      0.205128  |
+| The teacher uses positive language                                        |      0.397436  |
+| The teacher responds to students needs                                    |      0.717949  |
+| The teacher does not exhibit gender bias                                  |      0.0384615 |
+| Positive Behavioral Expectations                                          |      0.205128  |
+| The teacher sets clear behavioral expectations                            |      0.423077  |
+| The teacher acknowledges positive student behavior                        |      0.371795  |
+| The teacher redirects misbehavior                                         |      0.346154  |
+| Lesson Facilitation                                                       |      0.173077  |
+| The teacher explicitly articulates learning objectives                    |      0.371795  |
+| The teacher's explanation of content is clear                             |      0.410256  |
+| The teacher makes connections in the lesson                               |      0.371795  |
+| The teacher models by enacting or thinking aloud                          |      0.25641   |
+| Checks for understanding                                                  |      0.192308  |
+| The teacher uses questions                                                |      0.282051  |
+| The teacher uses prompts                                                  |      0.551282  |
+| The teacher monitors most students                                        |      0.333333  |
+| Feedback                                                                  |      0.333333  |
+| The teacher provides specific comments for misunderstandings              |      0.320513  |
+| The teacher provides specific comments for successes                      |      0.314103  |
+| Critical Thinking                                                         |      0.333333  |
+| The teacher asks open-ended questions                                     |      0.269231  |
+| The teacher provides thinking tasks                                       |      0.24359   |
+| Students ask open-ended questions or perform thinking tasks               |      0.166667  |
+| Autonomy                                                                  |      0.25641   |
+| The teacher provides students with choices                                |      0.435897  |
+| The teacher provides students with opportunities to take meaningful roles |      0.487179  |
+| Students volunteer to participate in the classroom                        |      0.192308  |
+| Perseverance                                                              |      0.487179  |
+| The teacher acknowledges students' efforts                                |      0.24359   |
+| The teacher has a positive attitude towards students' challenges          |      0.487179  |
+| The teacher encourages goal-setting                                       |      0.301282  |
+| Social & Collaborative Skills                                             |      0.333333  |
+| The teacher promotes students' collaboration                              |      0.25641   |
+| The teacher promotes students' interpersonal skills                       |      0.358974  |
 
 ## 4. Domain-Specific Distance Averages
 
 | domain_id             | domain_name           |   avg_distance |
 |:----------------------|:----------------------|---------------:|
-| Time on Task          | Time on Task          |       0.279052 |
-| Classroom Culture     | Classroom Culture     |       0.34735  |
-| Instruction           | Instruction           |       0.334272 |
-| Socioemotional Skills | Socioemotional Skills |       0.388657 |
+| Time on Task          | Time on Task          |       0.284188 |
+| Classroom Culture     | Classroom Culture     |       0.336182 |
+| Instruction           | Instruction           |       0.341406 |
+| Socioemotional Skills | Socioemotional Skills |       0.384615 |

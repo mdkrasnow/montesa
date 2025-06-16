@@ -57,6 +57,10 @@ We justify some cleaining:
 https://chatgpt.com/c/68471a79-6f30-8006-a2b9-aa2aec8a2c05
 
 
+remove some rows because the human evlautions were all N/A
+- [ ] 487124 
+- [ ] 226480
+
 ## 6 Performance: 
 
 We need to measure:
