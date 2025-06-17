@@ -27,7 +27,7 @@ from ..PromptTemplates import (
 logger = logging.getLogger(__name__)
 
 
-class BaseModelEvaluator:
+class JudgeModelEvaluator:
     """
     Flexible Framework Evaluation Pipeline implemented with OOP.
     Upgraded with a two-stage “LLM-as-Judge” loop for each component:
@@ -117,30 +117,112 @@ class BaseModelEvaluator:
             or "Follow the framework rubric criteria."
         )
 
-        critique_prompt = (
-            f"You are acting as an impartial **LLM-as-Judge** reviewing a "
-            f"peer evaluator’s JSON for a teacher-observation component.\n\n"
-            f"### Component Metadata\n"
-            f"- ID: {comp_id}\n"
-            f"- Description: {comp_description}\n"
-            f"- Allowed scores: {score_list}\n\n"
-            f"### Rubric Excerpt\n{rubric_text}\n\n"
-            f"### Candidate Evaluation (JSON)\n```json\n"
-            f"{json.dumps(draft_json, indent=2)}\n```\n\n"
-            "# Your Tasks\n"
-            "1. Verify the analysis cites appropriate evidence and aligns with the rubric.\n"
-            "2. Decide whether the chosen score is well-justified (output `accept`) "
-            "or should be revised (`revise`).\n"
-            "3. If revising, supply a better `recommended_score` chosen from the "
-            "allowed list **and** a concise `revised_analysis` (≤ 60 words) that "
-            "improves clarity or alignment.\n\n"
-            "### Strict JSON Response Template (no extra keys / text!)\n"
-            "{\n"
-            '  "verdict": "accept" | "revise",\n'
-            '  "recommended_score": <number|null>,\n'
-            '  "revised_analysis": "<string|null>"\n'
-            "}\n"
-        )
+        critique_prompt = f"""You are an expert **LLM-as-Judge** specializing in educational assessment validation. Your role is to rigorously evaluate peer evaluators' analyses of teacher observation data to ensure accuracy, consistency, and rubric alignment.
+
+## EVALUATION CONTEXT
+
+### Component Details
+- **ID**: {comp_id}
+- **Description**: {comp_description}  
+- **Valid Score Range**: {score_list}
+
+### Assessment Rubric
+{rubric_text}
+
+### Candidate Evaluation Under Review
+```json
+{json.dumps(draft_json, indent=2)}
+```
+
+## EVALUATION FRAMEWORK
+
+You must systematically assess the candidate evaluation using this step-by-step process:
+
+### Step 1: Evidence Analysis
+- Does the analysis cite specific, observable evidence from the classroom observation?
+- Is the evidence directly relevant to this component's criteria?
+- Are claims supported rather than speculative?
+
+### Step 2: Rubric Alignment Check  
+- Does the analysis demonstrate clear understanding of the rubric descriptors?
+- Is the interpretation of evidence consistent with rubric language and intent?
+- Are any rubric criteria misapplied or overlooked?
+
+### Step 3: Score Justification Review
+- Is the assigned score logically derived from the evidence presented?
+- Does the score match the performance level described in the analysis?
+- Would an independent evaluator reach a similar conclusion based on this analysis?
+
+### Step 4: Quality Assessment
+- Is the analysis clear, specific, and professionally written?
+- Does it provide actionable insights rather than vague generalizations?
+- Is the length appropriate (substantive but concise)?
+
+## DECISION CRITERIA
+
+**ACCEPT** the evaluation if:
+- Evidence is specific, relevant, and well-documented
+- Rubric alignment is accurate and demonstrates understanding
+- Score is well-justified by the evidence and analysis
+- Analysis quality meets professional standards
+
+**REVISE** the evaluation if:
+- Evidence is vague, irrelevant, or insufficient
+- Rubric interpretation is flawed or misaligned  
+- Score doesn't match the evidence or analysis
+- Analysis lacks clarity or contains significant errors
+
+## OUTPUT REQUIREMENTS
+
+Provide your response in this exact JSON format with no additional text:
+
+```json
+{{
+  "analysis": "<your systematic evaluation of the candidate's analysis and score using the 4-step framework above>",
+  "verdict": "accept|revise", 
+  "recommended_score": <number from {score_list} or null if accepting>,
+  "revised_analysis": "<60-word maximum improvement or null if accepting>"
+}}
+```
+
+### Validation Rules:
+- `analysis` must contain your step-by-step reasoning through the evaluation framework (reference Steps 1-4 explicitly)
+- `verdict` must be exactly "accept" or "revise"
+- `recommended_score` must be from the valid range {score_list} if revising, null if accepting
+- `revised_analysis` must be ≤60 words if revising, null if accepting
+- No additional keys or explanatory text outside the JSON structure
+
+**Important**: Use the `analysis` field to show your systematic evaluation process before reaching your verdict. This ensures transparency and consistency in your judgment.
+
+## EXAMPLES
+
+### Example 1 - ACCEPT case:
+If candidate analysis states: "Teacher used think-pair-share strategy, allowing 2 minutes individual reflection before paired discussion. Observed 85% student engagement during the 8-minute activity."
+
+Response:
+```json
+{{
+  "analysis": "Step 1: Evidence is specific and observable (think-pair-share, timing, engagement percentage). Step 2: Aligns with rubric criteria for student engagement strategies. Step 3: Score matches the described performance level. Step 4: Analysis is clear and professional.",
+  "verdict": "accept",
+  "recommended_score": null,
+  "revised_analysis": null
+}}
+```
+
+### Example 2 - REVISE case:  
+If candidate analysis states: "Teacher seemed to engage students well and the lesson was good."
+
+Response:
+```json
+{{
+  "analysis": "Step 1: Evidence is vague and subjective ('seemed', 'good'). Step 2: No clear rubric alignment demonstrated. Step 3: Score cannot be justified from limited evidence. Step 4: Analysis lacks specificity and professional rigor.",
+  "verdict": "revise", 
+  "recommended_score": 2,
+  "revised_analysis": "Teacher implemented interactive strategies with observable student participation, though specific engagement metrics and strategy details need documentation for complete evaluation."
+}}
+```
+
+Think through each step systematically before rendering your final judgment."""
         return critique_prompt
 
     # ────────────────────────────────────────────────────────────────

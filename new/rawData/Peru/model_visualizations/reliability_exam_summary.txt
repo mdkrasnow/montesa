@@ -2,18 +2,18 @@ Reliability Exam Summary
 🔍 RELIABILITY EXAM ANALYSIS SUMMARY
 =====================================
 
-📊 MODELS EVALUATED: 7
-Models: 0-TEST-Control, 5-TEST-High-Rubric-Timestamped, 2-TEST-Medium-Rubric, 3-TEST-High-Rubric, 4-TEST-High-Rubric-Reasoning, 1-TEST-BaseEvaluator_evaluations, 1-TEST-BaseEvaluator
+📊 MODELS EVALUATED: 8
+Models: 6-TEST-High-Rubric-Chain, 0-TEST-Control, 5-TEST-High-Rubric-Timestamped, 2-TEST-Medium-Rubric, 3-TEST-High-Rubric, 4-TEST-High-Rubric-Reasoning, 7-TEST-High-Rubric-Judge, 1-TEST-BaseEvaluator
 
 🎯 CERTIFICATION RESULTS:
-- Models Certified: 5 of 7 (71.4%)
-- Models Failed: 2 of 7 (28.6%)
+- Models Certified: 5 of 8 (62.5%)
+- Models Failed: 3 of 8 (37.5%)
 
 📈 PERFORMANCE BENCHMARKS:
-- Average Segment Pass Rate: 79.1%
+- Average Segment Pass Rate: 75.4%
 - Best Model: 3-TEST-High-Rubric (89.3%)
-- Worst Model: 1-TEST-BaseEvaluator (65.5%)
+- Worst Model: 7-TEST-High-Rubric-Judge (52.4%)
 ======================
 
-Models Evaluated: 7
+Models Evaluated: 8
 Models Certified: 5

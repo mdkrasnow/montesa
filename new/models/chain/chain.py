@@ -15,7 +15,7 @@ from ..PromptTemplates import (
 
 logger = logging.getLogger(__name__)
 
-class BaseModelEvaluator:
+class ChainModelEvaluator:
     """
     Flexible Framework Evaluation Pipeline implemented with OOP.
     This class provides the core methods for generating evaluations from
