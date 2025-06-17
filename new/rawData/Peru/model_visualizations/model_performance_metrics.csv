@@ -1,9 +1,7 @@
 Model,Pass Rate (%),Certified
-6-TEST-High-Rubric-Chain,63.1,No
 0-TEST-Control,70.2,No
 5-TEST-High-Rubric-Timestamped,86.9,Yes
 2-TEST-Medium-Rubric,79.8,Yes
 3-TEST-High-Rubric,89.3,Yes
 4-TEST-High-Rubric-Reasoning,88.1,Yes
-7-TEST-High-Rubric-Judge,52.4,No
 1-TEST-BaseEvaluator,73.8,Yes
