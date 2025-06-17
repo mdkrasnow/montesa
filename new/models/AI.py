@@ -1,3 +1,4 @@
+# Ai.py
 import os
 from dotenv import load_dotenv
 import logging
@@ -68,7 +69,7 @@ def generate_ai_content(messages: Any, generation_config: Optional[Any] = None, 
                                            including temperature and response_mime_type.
     """
     # Get the current thread's useOpenAI value, defaulting to environment variable if not set
-    use_openai = True
+    use_openai = False
 
     if use_openai:
         # Map generation configuration to OpenAI parameters

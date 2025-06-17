@@ -1,6 +1,8 @@
 Model,Pass Rate (%),Certified
+0-TEST-Control,70.2,No
 5-TEST-High-Rubric-Timestamped,86.9,Yes
 2-TEST-Medium-Rubric,79.8,Yes
 3-TEST-High-Rubric,89.3,Yes
 4-TEST-High-Rubric-Reasoning,88.1,Yes
-1-TEST-BaseEvaluator,65.5,Yes
+1-TEST-BaseEvaluator_evaluations,73.8,Yes
+1-TEST-BaseEvaluator,65.5,No

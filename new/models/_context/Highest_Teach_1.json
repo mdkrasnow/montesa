@@ -1,0 +1,467 @@
+{
+  "structure": {
+    "domains": [
+      {
+        "id": "Time on Task",
+        "name": "Time on Task",
+        "number": 1,
+        "weight": 0.15,
+        "description": "Captures the extent to which the teacher provides a learning activity (Behavior 0.1) and students remain on task (Behavior 0.2) across three rapid snapshots (1–10 second scans at minutes 4–5, 9–10, and 14–15).",
+        "components": [
+          {
+            "id": "Teacher provides learning activity - 1st Snapshot",
+            "number": 1,
+            "name": "Teacher provides learning activity - 1st Snapshot",
+            "description": "Teacher provides a learning activity to most students during the first snapshot (between 4:00–5:00 of the segment).",
+            "weight": 0.1667,
+            "scoreList": ["Y","N"],
+            "isManuallyScored": false,
+            "rubric": "Y (Yes): At the precise moment of the 4–5 min snapshot the observer can verify that ⩾ 80 % of students have a clearly academic task to do that aligns to the lesson objective — e.g., listening to direct instruction, solving written problems, structured discussion, silent reading of assigned text, or collaborative work with materials already distributed. The teacher may be circulating, but the activity must have been set and be underway.  \nN (No): Teacher focus is managerial/administrative (e.g., taking attendance, lengthy transitions, passing out papers without instructions) OR < 80 % of students are engaged OR students wait idly for the next direction. Non‑instructional talk (\"quiet down\", \"sit properly\") with no task counts as N.  \nRule: If scored N, Behavior 0.2 for that snapshot is automatically L.  \nCommon edge‑cases clarified in FAQs 0.1a–0.1b of the manual include: (i) teacher copying notes on the board while students watch silently → N, (ii) brief pause (<30 s) to distribute an already‑explained task → Y as long as ≥ 80 % remain engaged.  \nHistorical distribution ≈ Y 0.90 | N 0.10."
+          },
+          {
+            "id": "Students are on task - 1st Snapshot",
+            "number": 2,
+            "name": "Students are on task - 1st Snapshot",
+            "description": "Students' on‑task behavior during the first snapshot (4:00–5:00 of the segment).",
+            "weight": 0.1667,
+            "scoreList": ["L","M","H"],
+            "isManuallyScored": false,
+            "rubric": "Snapshot rating uses an instantaneous left‑to‑right scan lasting 1–10 s.  \nH (High): 0–1 student off‑task.  \nM (Medium): 2–5 students off‑task.  \nL (Low): ⩾ 6 students off‑task OR teacher scored N for 0.1.  \n“Off‑task” includes quiet distraction (staring out window, resting head, watching observer) **and** disruptive behaviors (side‑talk, passing notes, leaving seat, throwing objects). Students looking at teacher while he/she speaks **are on‑task**; students searching bags, sharpening pencils, etc., during teacher instruction are off‑task.  \nHistorical distribution ≈ H 0.55 | M 0.36 | L 0.09."
+          },
+          {
+            "id": "Teacher provides learning activity - 2nd Snapshot",
+            "number": 3,
+            "name": "Teacher provides learning activity - 2nd Snapshot",
+            "description": "Teacher provides a learning activity to most students during the second snapshot (between 9:00–10:00 of the segment).",
+            "weight": 0.1667,
+            "scoreList": ["Y","N"],
+            "isManuallyScored": false,
+            "rubric": "Same decision rules as the 1st snapshot, applied at 9–10 min.  \nY: ≥ 80 % engaged in academic task (lecturing, problem‑solving, reading, collaborative work, etc.).  \nN: < 80 % engaged, or only non‑learning activity visible (disciplining, idle waiting, board‑copying with no task).  \nIf N, 0.2 auto‑coded L for this snapshot.  \nHistorical distribution ≈ Y 0.86 | N 0.14."
+          },
+          {
+            "id": "Students are on task - 2nd Snapshot",
+            "number": 4,
+            "name": "Students are on task - 2nd Snapshot",
+            "description": "Students' on‑task behavior during the second snapshot (9:00–10:00 of the segment).",
+            "weight": 0.1667,
+            "scoreList": ["L","M","H"],
+            "isManuallyScored": false,
+            "rubric": "Use identical thresholds as snapshot 1. Off‑task indicators include attention to external distractions (e.g., visitors), personal conversation, phone usage, or physical disruption.  \nL ≥ 6, M 2–5, H 0–1 off‑task.  \nAutomatically L if 0.1=N.  \nHistorical distribution ≈ H 0.49 | M 0.41 | L 0.10."
+          },
+          {
+            "id": "Teacher provides learning activity - 3rd Snapshot",
+            "number": 5,
+            "name": "Teacher provides learning activity - 3rd Snapshot",
+            "description": "Teacher provides a learning activity to most students during the third snapshot (between 14:00–15:00 of the segment).",
+            "weight": 0.1667,
+            "scoreList": ["Y","N"],
+            "isManuallyScored": false,
+            "rubric": "Apply the same decision logic at 14–15 min.  \nY: ≥ 80 % students engaged in an academic task (independent seat‑work, group problem‑solving, active questioning, etc.).  \nN: Administrative tasks, packing‑up, lining‑up, waiting without instruction, OR < 80 % engaged.  \nIf N, 0.2 auto‑coded L.  \nHistorical distribution ≈ Y 0.92 | N 0.08."
+          },
+          {
+            "id": "Students are on task - 3rd Snapshot",
+            "number": 6,
+            "name": "Students are on task - 3rd Snapshot",
+            "description": "Students' on‑task behavior during the third snapshot (14:00–15:00 of the segment).",
+            "weight": 0.1667,
+            "scoreList": ["L","M","H"],
+            "isManuallyScored": false,
+            "rubric": "Same thresholds as snapshots 1 & 2 (H 0–1, M 2–5, L ≥ 6 off‑task). Remember to distinguish productive talk (task‑related) from social talk (off‑task).  \nIf Behavior 0.1=N, automatically L.  \nHistorical distribution ≈ H 0.56 | M 0.34 | L 0.10."
+          }
+        ]
+      },
+      {
+        "id": "Classroom Culture",
+        "name": "Classroom Culture",
+        "number": 2,
+        "weight": 0.25,
+        "description": "Captures the teacher's creation of an emotionally supportive environment and the management of student behavior through two elements: Supportive Learning Environment and Positive Behavioral Expectations.",
+        "components": [
+          {
+            "id": "Supportive Learning Environment",
+            "number": 1,
+            "name": "Supportive Learning Environment",
+            "description": "Overall rating of the supportive learning environment (Element 1).",
+            "weight": 0.1111,
+            "scoreList": [1,2,3,4,5],
+            "isManuallyScored": false,
+            "rubric": "1 (Very Low): Multiple incidents of disrespect or humiliation (yelling, ridicule, threats, corporal punishment) OR sustained negative emotional climate.  \n2: Isolated incident(s) of disrespect OR predominantly neutral climate with occasional negativity.  \n3 (Mid): Neutral climate — no disrespect, but little warmth or positive language; interactions are polite but transactional.  \n4: Frequent explicit respect (names, ‘please/thank‑you’), occasional encouragement, responsive to needs; no bias; teacher maintains an emotionally safe space.  \n5 (High): Consistent, proactive respect plus deliberate strategies to make every student feel valued; rapid, specific response to needs; regular culturally relevant affirmation; deliberate avoidance of stereotype threat.  \nElement score must synthesise Behaviors 1.1–1.4, giving greatest weight to most frequently observed evidence (see Manual p 20)."
+          },
+          {
+            "id": "The teacher treats all students respectfully",
+            "number": 2,
+            "name": "The teacher treats all students respectfully",
+            "description": "Behavior 1.1 under SLE: Teacher's respectful tone and interactions.",
+            "weight": 0.1111,
+            "scoreList": ["L","M","H"],
+            "isManuallyScored": false,
+            "rubric": "L: Any instance of disrespect (shouting, sarcasm, ridicule, public shaming, corporal or authoritarian physical contact). One occurrence instantly lowers to L even if later tone improves.  \nM: No disrespectful acts, but respect is implicit rather than explicit — teacher uses neutral voice, refers to students generically (\"boy, girl\") or by pointing, gives commands without courtesy phrases.  \nH: Teacher consistently uses culturally appropriate respectful language and non‑verbal cues (students’ names, courteous phrases, calm tone, appropriate physical proximity) with every student, including those struggling or off‑task. Respectful corrections replace scolding (e.g., \"Could you try that again? Thank you\")."
+          },
+          {
+            "id": "The teacher uses positive language",
+            "number": 3,
+            "name": "The teacher uses positive language",
+            "description": "Behavior 1.2 under SLE: Frequency and quality of positive feedback.",
+            "weight": 0.1111,
+            "scoreList": ["L","M","H"],
+            "isManuallyScored": false,
+            "rubric": "Count **only verbal statements** from teacher to students. Non‑verbal applause or peer praise is excluded per Manual footnote 2.  \nL: 0 instances of positive language OR language that is exclusively evaluative/empty (“OK”, “hm‑hmm”).  \nM: 1–4 generic, unspecific praises (\"good\", \"well done\") OR isolated specific praise.  \nH: ≥ 5 **specific** and encouraging statements or a lower frequency of highly elaborated praise that names the behaviour/strategy (\"I like how you explained your reasoning; that shows deep thinking\"). Statements must convey encouragement of effort, strategy, or contribution, not fixed ability."
+          },
+          {
+            "id": "The teacher responds to students needs",
+            "number": 4,
+            "name": "The teacher responds to students needs",
+            "description": "Behavior 1.3 under SLE: Responsiveness to material or emotional needs.",
+            "weight": 0.1111,
+            "scoreList": ["L","M","H"],
+            "isManuallyScored": false,
+            "rubric": "Criterion applies **only if an observable need arises**; otherwise mark N/A.  \nL: Need is visible (student lacks materials, is visibly upset, etc.) and teacher ignores or dismisses it.  \nM: Teacher acknowledges but incompletely addresses need (e.g., asks class if anyone has a spare pencil but moves on without securing one; tells distressed student \"calm down\" but provides no further support).  \nH: Teacher promptly and fully meets need with problem‑specific action: provides resources, pairs student, adjusts seating, offers brief emotional support (“Take a sip of water; join group 3”). Responses occur within ≈ 30 s of noticing the need."
+          },
+          {
+            "id": "The teacher does not exhibit gender bias",
+            "number": 5,
+            "name": "The teacher does not exhibit gender bias",
+            "description": "Behavior 1.4 under SLE: Equitable treatment and challenge of stereotypes.",
+            "weight": 0.1111,
+            "scoreList": ["L","M","H"],
+            "isManuallyScored": false,
+            "rubric": "Mark N/A only in single‑gender classes.  \nL: Unequal opportunities, differential praise/criticism, or explicit stereotypes (\"girls are tidy\", \"boys answer maths\").  \nM: Teacher offers balanced opportunities and language shows no bias **but** does not actively counter stereotypes.  \nH: Teacher deliberately challenges stereotypes through language, examples, or task assignment (e.g., mixes seating, alternates boy/girl responses, uses female scientist example in science, assigns cleaning or leadership roles regardless of gender). Any observed sexist remark downgrades to L."
+          },
+          {
+            "id": "Positive Behavioral Expectations",
+            "number": 6,
+            "name": "Positive Behavioral Expectations",
+            "description": "Overall rating of the teacher's setting and reinforcement of behavior norms (Element 2).",
+            "weight": 0.1111,
+            "scoreList": [1,2,3,4,5],
+            "isManuallyScored": false,
+            "rubric": "1: No evidence of expectations; chaos or teacher ignores misbehavior.  \n2: Vague or generic rules stated once (\"be good\") with little follow‑through; acknowledgement/redirect rare, largely ineffective.  \n3 (Mid): General expectations posted or verbalised; teacher occasionally acknowledges or redirects, sometimes effectively, sometimes not.  \n4: Clear, specific expectations tied to routines; teacher regularly acknowledges positives and redirects calmly; misbehavior seldom escalates.  \n5: Expectations are co‑constructed or rehearsed; teacher anticipates transitions with reminders, reinforces prosocial norms, and redirects pre‑emptively in a manner that keeps 90 %+ students engaged throughout. Element score integrates Behaviors 2.1–2.3 (Manual p 21)."
+          },
+          {
+            "id": "The teacher sets clear behavioral expectations",
+            "number": 7,
+            "name": "The teacher sets clear behavioral expectations",
+            "description": "Behavior 2.1 under PBE: Clarity and specificity of expectations.",
+            "weight": 0.1111,
+            "scoreList": ["L","M","H"],
+            "isManuallyScored": false,
+            "rubric": "L: No explicit expectations stated, OR expectations so vague they fail to guide behavior (\"Behave\", \"Be quiet\").  \nM: Teacher articulates broad rules (\"No talking\", \"Raise your hand\") once, without linking to specific activity or checking student understanding.  \nH: Teacher proactively states or reminds students of **specific, observable** behaviors **for the impending task** (\"In your pairs, whisper your ideas so others can think; raise your board when you finish\"). If expectations were clearly taught earlier & students follow them flawlessly, observer may rate H even without restatement (see FAQ 2.1a)."
+          },
+          {
+            "id": "The teacher acknowledges positive student behavior",
+            "number": 8,
+            "name": "The teacher acknowledges positive student behavior",
+            "description": "Behavior 2.2 under PBE: Recognition of students meeting or exceeding expectations.",
+            "weight": 0.1111,
+            "scoreList": ["L","M","H"],
+            "isManuallyScored": false,
+            "rubric": "L: Zero acknowledgement of expected behavior OR teacher only comments when behavior is negative.  \nM: 1–2 generic acknowledgements (\"Good\", \"Nice job\") or non‑specific group praise (“I like what I’m seeing”).  \nH: Frequent (≥ 3) **specific** acknowledgements naming the behavior and linking to expectation (\"Thank you, Aisha, for keeping your desk organized as we asked\"). Positive behaviour recognition covers at least half of visible groups in class."
+          },
+          {
+            "id": "The teacher redirects misbehavior",
+            "number": 9,
+            "name": "The teacher redirects misbehavior",
+            "description": "Behavior 2.3 under PBE: Prompt, clear redirection and reinforcement of norms.",
+            "weight": 0.1111,
+            "scoreList": ["L","M","H"],
+            "isManuallyScored": false,
+            "rubric": "L: Teacher addresses misbehavior by scolding/shaming OR uses vague command without guidance (\"Stop that!\", \"Behave!\") and behaviour continues.  \nM: Teacher redirects calmly but without linking to expectation OR redirection partially effective (behaviour stops but restarts soon).  \nH: Teacher quickly references **desired behavior** (\"Remember our rule — hands up to speak\"), uses neutral tone, and misbehavior ceases or reduces for ≥ 2 min. If no misbehavior occurs during segment, score H **only** if clear expectations (2.1) were set and students remained compliant; otherwise mark M."
+          }
+        ]
+      },
+      {
+        "id": "Instruction",
+        "name": "Instruction",
+        "number": 3,
+        "weight": 0.35,
+        "description": "Assesses facilitation of lesson objectives, checks for understanding, feedback, and promotion of critical thinking.",
+        "components": [
+          {
+            "id": "Lesson Facilitation",
+            "number": 1,
+            "name": "Lesson Facilitation",
+            "description": "Overall rating of lesson facilitation (Element 3).",
+            "weight": 0.0833,
+            "scoreList": [1,2,3,4,5],
+            "isManuallyScored": false,
+            "rubric": "1: Objectives absent/unclear; explanations muddled; no connections; no modeling; lesson feels disjointed.  \n2: One of the four core behaviours (3.1–3.4) is present at Medium level; others Low.  \n3 (Mid): Two behaviours at Medium or one at High; students have general idea of purpose, some clarity, limited connections/modeling.  \n4: At least two behaviours at High and none at Low; objectives explicit, explanations clear, relevant links or partial modeling evident.  \n5: All four behaviours at High — precise objective stated & referenced, crystal‑clear explanations with accurate terminology, meaningful link to prior knowledge/daily life, and full modeling with think‑aloud followed by student practice."
+          },
+          {
+            "id": "The teacher explicitly articulates learning objectives",
+            "number": 2,
+            "name": "The teacher explicitly articulates learning objectives",
+            "description": "Behavior 3.1 under Lesson Facilitation: Stating and referencing objectives.",
+            "weight": 0.0833,
+            "scoreList": ["L","M","H"],
+            "isManuallyScored": false,
+            "rubric": "L: Objective absent OR stated as activity only (\"We’ll do exercise 7\"), not purpose.  \nM: Objective stated in broad terms (\"We’ll read a story\") or implied via board heading, but not linked again during lesson.  \nH: Objective is **specific, skills‑based** (\"Today you will identify action verbs and circle them\"), voiced early, written or displayed, **and** referenced/revisited during or after activity to check progress (\"Let’s see if we met our goal of identifying…\")."
+          },
+          {
+            "id": "The teacher's explanation of content is clear",
+            "number": 3,
+            "name": "The teacher's explanation of content is clear",
+            "description": "Behavior 3.2 under Lesson Facilitation: Clarity and comprehensiveness of explanations.",
+            "weight": 0.0833,
+            "scoreList": ["L","M","H"],
+            "isManuallyScored": false,
+            "rubric": "Assess clarity, **not** correctness (Manual p 23 note).  \nL: Explanations fragmented, jargon‑filled, or teacher skips key steps; students appear confused (multiple clarifying questions).  \nM: Generally understandable but missing definitions, examples, or logical sequence; occasional confusion.  \nH: Sequential explanation using student‑friendly language, clear definitions, examples/non‑examples, checks for understanding embedded; teacher’s voice/aids (charts, gestures) enhance comprehension."
+          },
+          {
+            "id": "The teacher makes connections in the lesson",
+            "number": 4,
+            "name": "The teacher makes connections in the lesson",
+            "description": "Behavior 3.3 under Lesson Facilitation: Linking to prior knowledge and experiences.",
+            "weight": 0.0833,
+            "scoreList": ["L","M","H"],
+            "isManuallyScored": false,
+            "rubric": "L: No attempt to relate content; content stands in isolation.  \nM: Superficial or generic reference to prior lesson/daily life without explanation (\"Remember what we did yesterday\", “Like in real life”).  \nH: Teacher explicitly connects new concept to prior knowledge **or** authentic context, explaining the link (“Multiplication is like adding equal groups — imagine you buy 3 bags with 2 apples each… how many apples?”). Connection must illuminate concept, not just mention."
+          },
+          {
+            "id": "The teacher models by enacting or thinking aloud",
+            "number": 5,
+            "name": "The teacher models by enacting or thinking aloud",
+            "description": "Behavior 3.4 under Lesson Facilitation: Enacting steps with think‑aloud.",
+            "weight": 0.0833,
+            "scoreList": ["L","M","H"],
+            "isManuallyScored": false,
+            "rubric": "Modeling is required **only** for tasks involving a process or strategy (Manual FAQ 3.4b).  \nL: No modeling; teacher jumps straight to asking students to perform.  \nM: Partial modeling — teacher demonstrates some steps or gives verbal outline without showing thinking, **or** models fully but does not allow student practice.  \nH: Teacher fully demonstrates task **and** verbalises cognitive process (think‑aloud) then provides an opportunity for students to practice the same or closely related task within the segment. If modeling is unnecessary (pure recall exercise), mark N/A."
+          },
+          {
+            "id": "Checks for understanding",
+            "number": 6,
+            "name": "Checks for understanding",
+            "description": "Overall rating of checks for understanding (Element 4).",
+            "weight": 0.05,
+            "scoreList": [1,2,3,4,5],
+            "isManuallyScored": false,
+            "rubric": "1: No CFU; teacher only asks \"Any questions?\" or accepts chorus answers without evidence.  \n2: Sporadic CFU but limited to volunteers or single student; no follow‑up.  \n3: Multiple CFU strategies but reach < 75 % of class OR teacher does not act on information.  \n4: Systematic CFU reaching ≥ 75 % of students (e.g., individual whiteboards, exit tickets) **or** probing questions with follow‑ups; adjustments minor.  \n5: Regular, varied CFU tools plus responsive teaching — teacher revisits concept, re‑groups, adds examples based on data collected. Element aggregates Behaviors 4.1–4.3."
+          },
+          {
+            "id": "The teacher uses questions",
+            "number": 7,
+            "name": "The teacher uses questions",
+            "description": "Behavior 4.1 under Checks for Understanding: Effective questioning strategies.",
+            "weight": 0.05,
+            "scoreList": ["L","M","H"],
+            "isManuallyScored": false,
+            "rubric": "L: Closed recall questions only (\"What’s 2×3?\"); no probing; teacher relies on chorus answers.  \nM: At least two open‑ended questions but minimal probing/follow‑up; responses limited to volunteers.  \nH: Multiple open‑ended questions distributed across class with probing (\"Why…?\", \"Explain how…\"), prompts for elaboration, or revoice/extend student ideas. Use of wait‑time or cold‑call strengthens score."
+          },
+          {
+            "id": "The teacher uses prompts",
+            "number": 8,
+            "name": "The teacher uses prompts",
+            "description": "Behavior 4.2 under Checks for Understanding: Prompts guiding thinking.",
+            "weight": 0.05,
+            "scoreList": ["L","M","H"],
+            "isManuallyScored": false,
+            "rubric": "Applicable only if lesson requires reasoning (see FAQs).  \nL: Prompts only factual recall (“What is the formula?”).  \nM: Occasional elaborative prompt (\"Tell me more\") or request for justification, but not sustained.  \nH: Regular prompts that press for reasoning/evidence (“How do you know?”, “What makes your method efficient?”), resulting in student explanation or self‑correction."
+          },
+          {
+            "id": "The teacher monitors most students",
+            "number": 9,
+            "name": "The teacher monitors most students",
+            "description": "Behavior 4.3 under Checks for Understanding: Circulation and probing during activities.",
+            "weight": 0.05,
+            "scoreList": ["L","M","H"],
+            "isManuallyScored": false,
+            "rubric": "Score only if an independent or group work period is observable; else mark L by definition (not N/A).  \nL: Teacher remains at front or assists < 50 % of students.  \nM: Circulates and interacts with ≈ 50–75 %; checks surface‑level completion.  \nH: Systematically visits > 75 % students/groups, observes work, asks probing questions or provides brief guidance, records misconceptions for later review."
+          },
+          {
+            "id": "Feedback",
+            "number": 10,
+            "name": "Feedback",
+            "description": "Overall rating of feedback (Element 5).",
+            "weight": 0.05,
+            "scoreList": ["L","M","H"],
+            "isManuallyScored": false,
+            "rubric": "L: Feedback limited to evaluative labels (“Yes/No”, “Correct/Wrong”) with no explanation.  \nM: Occasional specific feedback but generic overall (\"Check your carrying here\"); little actionable guidance.  \nH: Frequent, specific, process‑oriented feedback linked to success criteria; teacher prompts self‑correction or peer feedback. Element synthesises Behaviors 5.1–5.2."
+          },
+          {
+            "id": "The teacher provides specific comments for misunderstandings",
+            "number": 11,
+            "name": "The teacher provides specific comments for misunderstandings",
+            "description": "Behavior 5.1 under Feedback: Targeted feedback to clarify errors.",
+            "weight": 0.05,
+            "scoreList": ["L","M","H"],
+            "isManuallyScored": false,
+            "rubric": "L: Teacher ignores incorrect responses or simply states \"Wrong\" / supplies correct answer.  \nM: Identifies error but offers limited guidance (\"Check the denominator\").  \nH: Diagnoses misconception and guides student toward resolution with hints or questions (“You reversed numerator and denominator — what happens if we switch them?”) **or** provides worked example followed by re‑practice."
+          },
+          {
+            "id": "The teacher provides specific comments for successes",
+            "number": 12,
+            "name": "The teacher provides specific comments for successes",
+            "description": "Behavior 5.2 under Feedback: Reinforcement of successes.",
+            "weight": 0.05,
+            "scoreList": [1,2,3,4,5],
+            "isManuallyScored": false,
+            "rubric": "1: No recognition of success or only generic “Good”.  \n2: One specific comment identifying what was done well.  \n3: Several (2‑3) specific acknowledgements naming strategy/effort («Your evidence from the text makes your argument strong»).  \n4: Regular, detailed comments highlighting transferable strategies, sometimes inviting reflection («Notice how organising by place‑value helped you…»).  \n5: Consistent, strategic feedback that reinforces mastery criteria, invites peer recognition or student self‑assessment, and encourages application to new tasks."
+          },
+          {
+            "id": "Critical Thinking",
+            "number": 13,
+            "name": "Critical Thinking",
+            "description": "Overall rating of critical thinking promotion (Element 6).",
+            "weight": 0.05,
+            "scoreList": ["L","M","H"],
+            "isManuallyScored": false,
+            "rubric": "L: Instruction and assignments strictly rote; no open‑ended questioning or thinking tasks observed.  \nM: Some higher‑order questions/tasks but limited depth or follow‑up; students rarely initiate.  \nH: Regular open‑ended dialogue, authentic problems, analysis/synthesis tasks; multiple students engage, ask questions, or explain reasoning. Element aggregates Behaviors 6.1–6.3."
+          },
+          {
+            "id": "The teacher asks open-ended questions",
+            "number": 14,
+            "name": "The teacher asks open-ended questions",
+            "description": "Behavior 6.1 under Critical Thinking: Teacher questioning to extend reasoning.",
+            "weight": 0.05,
+            "scoreList": ["L","M","H"],
+            "isManuallyScored": false,
+            "rubric": "L: ≤ 1 open‑ended question, no follow‑up.  \nM: 2 open‑ended questions OR ≥ 3 but none build on student answer.  \nH: ≥ 3 open‑ended questions **and** at least one is a follow‑up that probes student response or extends thinking (e.g., \"What evidence supports your view?\", \"Can anyone build on Fatima’s idea?\")."
+          },
+          {
+            "id": "The teacher provides thinking tasks",
+            "number": 15,
+            "name": "The teacher provides thinking tasks",
+            "description": "Behavior 6.2 under Critical Thinking: Assignments requiring analysis or interpretation.",
+            "weight": 0.05,
+            "scoreList": ["L","M","H"],
+            "isManuallyScored": false,
+            "rubric": "Refer to Manual Table p 27 for categories.  \nL: Tasks only require recall/copying or formulaic fluency (e.g., copying definition, reciting facts).  \nM: Task involves some analysis/comparison but shallow or teacher‑directed (e.g., fill‑in‑blank Venn diagram).  \nH: Students tackle complex problem‑solving, interpretation, argumentation, or designing solution; task allows multiple correct answers or approaches; students must justify reasoning."
+          },
+          {
+            "id": "Students ask open-ended questions or perform thinking tasks",
+            "number": 16,
+            "name": "Students ask open-ended questions or perform thinking tasks",
+            "description": "Behavior 6.3 under Critical Thinking: Student engagement in higher-order thinking.",
+            "weight": 0.05,
+            "scoreList": [1,2,3,4,5],
+            "isManuallyScored": false,
+            "rubric": "1: No evidence of student‑generated questions or thinking tasks; off‑task or rote copying.  \n2: Isolated student attempts at explanation/questioning; minimal depth.  \n3: Several students attempt analytical tasks or ask clarifying \"why/how\" questions.  \n4: Many students engage in reasoning, debate, or critique; peers respond to one another.  \n5: Student‑led inquiry — students pose problems, challenge ideas, extend lesson; teacher acts as facilitator."
+          }
+        ]
+      },
+      {
+        "id": "Socioemotional Skills",
+        "name": "Socioemotional Skills",
+        "number": 4,
+        "weight": 0.25,
+        "description": "Teaching practices that develop student autonomy, perseverance, and social–collaborative skills.",
+        "components": [
+          {
+            "id": "Autonomy",
+            "number": 1,
+            "name": "Autonomy",
+            "description": "Overall rating of autonomy promotion (Element 7).",
+            "weight": 0.0909090909,
+            "scoreList": ["L","M","H"],
+            "isManuallyScored": false,
+            "rubric": "L: Lesson entirely teacher‑directed; no choices or roles; teacher vetoes student initiative.  \nM: Superficial choices (e.g., choose colour pencil, pick partner) or administrative roles (line‑leader); limited influence on learning.  \nH: Students make meaningful academic decisions (select topic, choose strategy, design product) **and/or** hold substantive roles (peer tutor, discussion facilitator) that influence learning process."
+          },
+          {
+            "id": "The teacher provides students with choices",
+            "number": 2,
+            "name": "The teacher provides students with choices",
+            "description": "Behavior 7.1 under Autonomy: Meaningful choices tied to objectives.",
+            "weight": 0.0909090909,
+            "scoreList": ["L","M","H"],
+            "isManuallyScored": false,
+            "rubric": "L: No choices; teacher dictates all parameters.  \nM: Choice offered but peripheral to learning goal (seat selection, order of problems).  \nH: Choice directly linked to objective or process (select research question, decide method for solving, choose representation for findings). Choices must have genuine consequences and not be revoked by teacher."
+          },
+          {
+            "id": "The teacher provides students with opportunities to take meaningful roles",
+            "number": 3,
+            "name": "The teacher provides students with opportunities to take meaningful roles",
+            "description": "Behavior 7.2 under Autonomy: Assigning central academic roles.",
+            "weight": 0.0909090909,
+            "scoreList": ["L","M","H"],
+            "isManuallyScored": false,
+            "rubric": "L: No student roles.  \nM: Only procedural/administrative (passing papers, erasing board).  \nH: Academic or leadership roles integral to lesson (group facilitator, peer‑reviewer, tech manager for experiment) where student decision‑making affects learning outcomes."
+          },
+          {
+            "id": "Students volunteer to participate in the classroom",
+            "number": 4,
+            "name": "Students volunteer to participate in the classroom",
+            "description": "Behavior 7.3 under Autonomy: Student initiative in participation.",
+            "weight": 0.0909090909,
+            "scoreList": [1,2,3,4,5],
+            "isManuallyScored": false,
+            "rubric": "1: No volunteers; participation occurs only when teacher calls on students.  \n2: A few students (< 20 %) volunteer once.  \n3: Several students (20–40 %) volunteer; participation still teacher‑driven.  \n4: Majority (> 40 %) volunteer at least once; multiple students initiate questions/comments.  \n5: Near‑universal engagement; students spontaneously initiate ideas or lead discussion without prompting."
+          },
+          {
+            "id": "Perseverance",
+            "number": 5,
+            "name": "Perseverance",
+            "description": "Overall rating of perseverance promotion (Element 8).",
+            "weight": 0.0909090909,
+            "scoreList": ["L","M","H"],
+            "isManuallyScored": false,
+            "rubric": "L: Teacher attributes success to innate ability (\"You’re so smart\"), shows frustration at errors, or discourages effort.  \nM: Neutral stance; occasional effort praise but no explicit strategy coaching.  \nH: Consistent growth‑mindset language (\"Mistakes help us learn\"), praises process, teaches coping strategies, encourages realistic but challenging goals."
+          },
+          {
+            "id": "The teacher acknowledges students' efforts",
+            "number": 6,
+            "name": "The teacher acknowledges students' efforts",
+            "description": "Behavior 8.1 under Perseverance: Specific praise of effort.",
+            "weight": 0.0909090909,
+            "scoreList": ["L","M","H"],
+            "isManuallyScored": false,
+            "rubric": "L: No effort‑related acknowledgement.  \nM: Generic effort praise (\"Good effort\"); ≤ 4 instances.  \nH: Specific, process‑focused praise (\"You checked your work three times — that’s persistence\") or narrative of improvement; ≥ 5 instances or sustained dialog."
+          },
+          {
+            "id": "The teacher has a positive attitude towards students' challenges",
+            "number": 7,
+            "name": "The teacher has a positive attitude towards students' challenges",
+            "description": "Behavior 8.2 under Perseverance: Framing failure as learning and offering support.",
+            "weight": 0.0909090909,
+            "scoreList": ["L","M","H"],
+            "isManuallyScored": false,
+            "rubric": "L: Teacher shows impatience, discouragement, or negative labels when students struggle.  \nM: Neutral; acknowledges struggle but offers no strategies (\"Keep trying\").  \nH: Expresses confidence in student ability to improve, normalises struggle, suggests concrete strategies (\"Break the problem into steps\") or offers scaffold."
+          },
+          {
+            "id": "The teacher encourages goal-setting",
+            "number": 8,
+            "name": "The teacher encourages goal-setting",
+            "description": "Behavior 8.3 under Perseverance: Promotion of short- and long-term goals.",
+            "weight": 0.0909090909,
+            "scoreList": [1,2,3,4,5],
+            "isManuallyScored": false,
+            "rubric": "1: No mention of goals.  \n2: Vague exhortation (\"Do your best\").  \n3: Teacher prompts class to set either short‑ OR long‑term goal (“Finish all 5 problems today”).  \n4: Both short‑ and long‑term academic goals discussed but not individualised.  \n5: Teacher co‑constructs measurable goals with students, tracks progress, and celebrates milestones."
+          },
+          {
+            "id": "Social & Collaborative Skills",
+            "number": 9,
+            "name": "Social & Collaborative Skills",
+            "description": "Overall rating of social and collaborative skills promotion (Element 9).",
+            "weight": 0.0909090909,
+            "scoreList": ["L","M","H"],
+            "isManuallyScored": false,
+            "rubric": "L: No structured peer interaction; teacher discourages collaboration or allows negative interactions.  \nM: Some pair/group work but tasks lack interdependence; teacher gives minimal guidance on social skills.  \nH: Well‑designed collaborative tasks requiring interdependence; teacher teaches & reinforces collaboration norms (listening, turn‑taking, respectful disagreement)."
+          },
+          {
+            "id": "The teacher promotes students' collaboration",
+            "number": 10,
+            "name": "The teacher promotes students' collaboration",
+            "description": "Behavior 9.1 under Social & Collaborative Skills: Designing interdependent group tasks.",
+            "weight": 0.0909090909,
+            "scoreList": ["L","M","H"],
+            "isManuallyScored": false,
+            "rubric": "L: No collaborative task or students work side‑by‑side independently.  \nM: Group task exists but could be completed individually; roles unclear; limited interaction.  \nH: Task requires coordination (e.g., jigsaw, lab experiment with assigned roles) to reach common product; teacher monitors and supports collaboration."
+          },
+          {
+            "id": "The teacher promotes students' interpersonal skills",
+            "number": 11,
+            "name": "The teacher promotes students' interpersonal skills",
+            "description": "Behavior 9.2 under Social & Collaborative Skills: Teaching empathy, perspective-taking, and emotion regulation.",
+            "weight": 0.0909090909,
+            "scoreList": ["L","M","H"],
+            "isManuallyScored": false,
+            "rubric": "L: Teacher ignores or dismisses social skill issues (interruptions, conflict).  \nM: Generic reminders (\"Be polite\"); occasional prompts to share or listen.  \nH: Explicit instruction or modeling of interpersonal strategies — active listening, using \"I\" statements, showing empathy; teacher facilitates reflection on group dynamics."
+          }
+        ]
+      }
+    ],
+    "isManuallyScored": false,
+    "decimals_allowed": true
+  },
+  "name": "TEACH 1.0 Classroom Observation Framework",
+  "description": "Based on the World Bank's TEACH tool, this framework evaluates both the time students spend engaged in learning and the quality of teaching practices across culture, instruction, and socioemotional development. Every rubric has been expanded with verbatim criteria, thresholds, and illustrative examples from the official TEACH Observer Manual v1.0 to maximise scoring clarity and reliability.",
+  "framework_id": "teach_1_0"
+}
