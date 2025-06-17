@@ -1,7 +1,6 @@
 Model,Pass Rate (%),Certified
-4-BaseEvaluator-Validate-no-NA-data,91.5,Yes
-5-BaseEvaluator-Validate-no-NA-data-g-25-flash,93.4,Yes
-2-BaseEvaluator-Validate,81.7,Yes
-6-BaseEvaluator-Validate-timestamped-data-g-20-flash,92.2,Yes
-3-BaseEvaluator-Validate-no-NA,87.8,Yes
-1-BaseEvaluator_evaluations,60.9,Yes
+5-TEST-High-Rubric-Timestamped,86.9,Yes
+2-TEST-Medium-Rubric,79.8,Yes
+3-TEST-High-Rubric,89.3,Yes
+4-TEST-High-Rubric-Reasoning,88.1,Yes
+1-TEST-BaseEvaluator,65.5,Yes

@@ -7,9 +7,79 @@ framework structure, replacing hardcoded Danielson-specific prompts.
 
 from typing import Dict, Any, List
 import logging
+from ._context.teach_1_manual import manual_text
 
 # Configure logging
 logger = logging.getLogger(__name__)
+
+
+def create_control_component_prompt(component: Dict[str, Any], observation_text: str, context: str) -> str:
+    """
+    Dynamically create a prompt for evaluating a component in any framework that
+    iterates through each possible score option, providing chain-of-thought analysis
+    and selecting the most appropriate score.
+
+    Args:
+        component (Dict): The component details including description and scoring parameters.
+        observation_text (str): The observation text to evaluate.
+        framework (Dict): The framework structure.
+        context (str): Additional context information.
+
+    Returns:
+        str: A prompt that instructs the LLM to output JSON with 'analysis' and 'score'.
+    """
+    # Get framework metadata
+    component_description = component.get("description", "")
+    score_list = component.get("scoreList", [])
+
+    # Base instructions
+    base_prompt = (
+        f"You are an expert evaluator using the Teach 1 Framework from the World Bank. "
+        f"Evaluate the teacher observation for the component: {component_description}."
+    )
+
+    # Inject rubric criteria if provided
+    rubric_text = manual_text
+
+    # Enumerate possible scores
+    score_prompt = "Possible score options:\n"
+    for option in score_list:
+        score_prompt += f"- {option}\n"
+
+    # Assemble the final prompt with chain-of-thought and strict JSON requirements
+    prompt = (
+        f"{base_prompt}\n\n"
+        f"{score_prompt}\n\n"
+        f"# Context:\n{context}\n\n"
+        f"# Transcript from classroom observation:\n{observation_text}\n\n"
+        "# Instructions:\n"
+        "For each score option, think step by step and provide your reasoning under "
+        "analysis.<score_option>. After reviewing all options, set the final chosen "
+        "score under the key 'score'.\n"
+        "Output must be pure JSON with exactly two top-level keys:\n"
+        "  - analysis: an object mapping each score to its chain-of-thought justification\n"
+        "  - score: the selected score option\n"
+        "Do not include any tokens, commentary, or formatting outside this JSON."
+        "In your analysis, you must iterate through each possible score option and provide analysis as for why or why not the score should be given."
+        "After reviewing all options, set the most likely chosen score under the key 'score'."
+        f"Rubric Criteria:\n{rubric_text}\n\n"
+        f"{base_prompt}\n\n"
+        f"{score_prompt}\n\n"
+        f"# Context:\n{context}\n\n"
+        f"# Transcript from classroom observation:\n{observation_text}\n\n"
+        "# Instructions:\n"
+        "For each score option, think step by step and provide your reasoning under "
+        "analysis.<score_option>. After reviewing all options, set the final chosen "
+        "score under the key 'score'.\n"
+        "Output must be pure JSON with exactly two top-level keys:\n"
+        "  - analysis: an object mapping each score to its chain-of-thought justification\n"
+        "  - score: the selected score option\n"
+        "Do not include any tokens, commentary, or formatting outside this JSON."
+        "In your analysis, you must iterate through each possible score option and provide analysis as for why or why not the score should be given."
+        "After reviewing all options, set the most likely chosen score under the key 'score'."
+
+    )
+    return prompt
 
 def create_generic_component_prompt(component: Dict[str, Any], observation_text: str, framework: Dict[str, Any], context: str) -> str:
     """

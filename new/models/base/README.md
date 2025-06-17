@@ -48,7 +48,7 @@ Model: gemini-2.5-flash
 
 ## Improved Gemini Model with improved JSON using Gemini 2.0 flash with formatted transcripts: 6-BaseEvaluator-Validate-timestamped-data-g-20-flash
 
-Dataset: **TIMESTAMPED_cleaned_transcripts.csv**
+Dataset: **TIMESTAMPED_peru_cleaned_transcripts.csv**
 
 Teach Framework Rubric: **high_Teach_1.json**
 
