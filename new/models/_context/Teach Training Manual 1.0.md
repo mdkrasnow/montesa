@@ -119,37 +119,8 @@ This means developing a progressive learning process for coding practice videos 
 
 The participant survey can be found in the Training Package. Make sure to administer the survey and send the results to teach@worldbank.org to help the continual assessment of the tool.
 
-# Reliability Exam
 
-This section provides information for successfully conducting the Reliability Exam.
----
-# INTRODUCTION
 
-# Setting Expectations
-
-Make sure to set expectations for the group at the beginning of the training. For example, perhaps it is expected that people will raise their hands to ask a question, listen when someone else is talking, turn off their phones while not on break, watch the video silently, don’t cheat/look at other people’s notes/scores, etc. Setting expectations at the beginning helps pave the way for a smooth training.
-
-# Materials
-
-Always check to make sure participants have the necessary materials to complete a specific activity. For example, everyone should have a training manual, score sheets, blank paper to take notes, and a writing utensil. Make sure everyone has what they need before starting each video, etc. If items such as score sheets are limited, make sure to remind participants to use one scoresheet for all the different element training videos and another for the area training videos. In this way, they should only need two scoresheets for the Day 1 training (one for the element videos and one for the area videos). If they simply need more space to take notes, encourage them to take notes on blank paper.
-
-# Preparation
-
-# Film videos
-
-Try to obtain a variety of classrooms with a representative sample of videos, range of quality (Low, Medium, High). Use protocols indicated in the videographer manual. At least 20 videos and ideally 20 different classrooms.
-
-# Editing videos
-
-Create 15-minute segments and categorizing them in overall areas to help later selection of segments. Also, name the segments with an easily identifiable name using the name of the school, grade, and subject being taught (For example: School1_G3_Math).
-
-# Master coding
-
-There should be at least 3 people per video with different roles (writer, organizer, and quality controller). The organizer coordinates the date and time for the discussion, the writer takes notes during the phone call and writes the justifications, and the quality controller reviews the justifications for the master codes. First, they all code individually and after assigning scores, they have a discussion to get the master codes. In case of disagreements, master coders can watch the video again. Ideally, other master codes can review the justifications to make sure that they reflect what is on the video.
-
-# Selecting videos for training
-
-One short clip for each element is included in the training power point to serve as an exemplar. 6 local videos should be sourced for practice, and at least 6 videos for reliability, 8 if possible. If you do change any exemplar clips, do not use reliability videos to show examples for the short clips or for practice videos. Practice videos can include the videos used for the short clips if necessary.
 
 # Training Packet
 
