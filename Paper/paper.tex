@@ -5,6 +5,7 @@
 \usepackage{authblk}
 \usepackage{geometry}
 \usepackage{hyperref,xcolor}
+\usepackage{float}
 \geometry{margin=1in}
 
 \begin{document}
@@ -55,7 +56,7 @@ In the TEACH framework, specific one-minute windows in the lesson are designated
 \subsection{AI Model and Evaluation Procedure}
 \noindent \textbf{AI Evaluation Model.} The core of our system is an AI-based classroom observation evaluator. In essence, this is a large language model (LLM) prompted with the cleaned transcript of a lesson segment and the TEACH rubric, tasked with producing scores for each rubric component as if it were a human observer. The Peru evaluation used multiple configurations of this AI model to test different assumptions (e.g., varying the quality of the rubric prompt and data provided). All configurations (except one) were built on Google's \textit{Gemini 2.0 Flash} LLM (a state-of-the-art model as of 2025) with a 1,048,576-token context window, which is capable of understanding Spanish transcripts and the evaluation criteria. The models differed primarily in the rubric and any additional context given: for example, one model was given a "low-quality" rubric (a first-draft, minimally engineered version of the TEACH scoring guidelines), while another was given a refined "high-quality" rubric that we manually edited for clarity and completeness. Some models were also given extra context like the historical score distributions (from EDA) or the explicit snapshot-tagged transcripts versus plain transcripts. In total, six model variants were evaluated (labeled Model~0 through Model~5 in our results, see Section~\ref{sec:results}), ranging from a naive baseline to the most enhanced version. These variants allow us to analyze the impact of rubric quality, handling of missing data, LLM improvements, and input formatting (timestamps) on performance. All models were run on the same set of cleaned test transcripts to generate their predicted scores for each rubric component.
 
-\begin{figure}[t]\centering
+\begin{figure}[H]\centering
 \includegraphics[width=0.95\textwidth]{model_specifications_table.png}
 \caption{Model specifications for the six AI variants evaluated. Each model differs in rubric quality, input formatting, and reasoning approach. Model 0 serves as a control, Model 1 as the baseline with minimal engineering, and Models 2-5 represent progressive enhancements to the system.}
 \label{fig:model-specs}
@@ -77,7 +78,7 @@ and the domain accuracy is \(1 - D_{\text{domain}}\). The overall observation ac
 
 \vspace{1ex}
 \noindent \textbf{Algorithm 1. Monte Carlo Simulation of TEACH Reliability Exam}
-\begin{lstlisting}[basicstyle=\small\ttfamily, frame=single]
+\begin{lstlisting}[basicstyle=\small\ttfamily]
 # Input: model predictions and human scores for all test sessions;
 # number of simulations N = 1000;
 # exam attempts allowed = 2; set_size = 3 sessions per attempt.
@@ -87,7 +88,7 @@ for i in 1..N:
     remaining_sessions = all_test_sessions.copy()
     certified = False
     for attempt in 1..2:
-        if len(remaining_sessions) < set_size: break  # not enough sessions left
+        if len(remaining_sessions) < set_size: break
         # Sample 3 sessions without replacement
         exam_set = sample(remaining_sessions, set_size)
         remove exam_set from remaining_sessions
@@ -112,7 +113,7 @@ In the above, the conditions \texttt{TimeOnLearningExactMatch >= 2} and \texttt{
 \subsection{Accuracy of AI vs.\ Human Scores}
 \noindent We first report the direct agreement between the AI models and human evaluators on the Peru test set, focusing on how rubric improvements affected performance. Figure~\ref{fig:domain-accuracy} summarizes the domain-level accuracy for each of the six model variants.
 
-\begin{figure}[t]\centering
+\begin{figure}[H]\centering
 \includegraphics[width=0.95\textwidth]{domain_accuracy_analysis.png}
 \caption{Domain-level accuracy comparison across model variants. Each column represents a domain from the TEACH framework, and each row shows a different model configuration. Higher values (darker blue) indicate better agreement with human evaluators. Model~3 (High Rubric) shows consistently strong performance across all domains.}
 \label{fig:domain-accuracy}
@@ -123,11 +124,7 @@ For Model~1 (baseline), the distance histogram is broader: about 30\% of the tim
 \subsection{Certification Exam Performance (Monte Carlo Simulation)}
 To address the ultimate question—can the AI serve as a reliable proxy for a human evaluator?—we turn to the simulated TEACH reliability exam results. Figure~\ref{fig:monte-carlo-pie} presents the outcomes of the Monte Carlo certification simulations for each model variant, and Figure~\ref{fig:segment-pass-bar} shows the average segment pass rates by model.
 
-\begin{figure}[t]\centering
-\includegraphics[width=0.95\textwidth]{segment_pass_dashboard.png}
-\caption{Average segment pass rate by model on the TEACH reliability criteria (higher is better). The dashed line at 80\% indicates the certification threshold; models above the line would be certified reliable. Model~3 achieved the highest pass rate (89.3\%), while the baseline Model~1 lagged around 70\%, failing to meet the standard.}
-\label{fig:segment-pass-bar}
-\end{figure} Under the TEACH criteria, an evaluator must demonstrate precise agreement on snapshots and close agreement on at least 8 of 9 quality items for the majority of segments. Our findings show a stark contrast between the baseline and enhanced models in this regard.
+Under the TEACH criteria, an evaluator must demonstrate precise agreement on snapshots and close agreement on at least 8 of 9 quality items for the majority of segments. Our findings show a stark contrast between the baseline and enhanced models in this regard.
 
 Model~1 (Baseline) was rarely able to pass all items in a given segment. Its \textit{segment pass rate} (the percentage of observed lessons for which it met the 8/10 criteria) was only about 55\%. Consequently, when we randomly selected sets of three lessons as an exam, Model~1 failed the vast majority of simulations. Specifically, Model~1’s Monte Carlo certification probability was effectively 0\%—it almost never would get 3 out of 3 passing lessons in a first attempt, and even with a second attempt, the odds of eventually passing 3 out of 6 were negligible. This model clearly falls short of the standard required for reliable use.
 
@@ -141,13 +138,13 @@ Drilling down into the components of the exam, we find that Time on Learning (sn
 
 To further validate these results statistically, we performed hypothesis tests comparing the distribution of model-human distances for Model~3 vs.\ Model~1. A paired \textit{t}-test across all rubric components and sessions confirmed that Model~3's errors were significantly smaller than Model~1's (\(p < 0.001\)), and a proportions test on segment pass rates showed Model~3's 89.3\% vs.\ Model~1's 73.8\% is a highly significant difference (\(p < 0.0001\)). These underline that the performance gain is not due to chance or specific to a few outlier lessons, but a systematic improvement.
 
-\begin{figure}[t]\centering
+\begin{figure}[H]\centering
 \includegraphics[width=0.9\textwidth]{statistical_significance_matrix.png}
-\caption{Statistical significance matrix comparing performance differences between model variants. Each cell indicates whether the row model significantly outperforms the column model (green), underperforms (red), or shows no significant difference (gray). Model~3 significantly outperforms all other models except Model~5.}
+\caption{Statistical significance matrix comparing performance differences between model variants. Each cell indicates whether the row model significantly outperforms the column model (green), underperforms (red), or shows no significant difference (gray).}
 \label{fig:stat-sig}
 \end{figure}
 
-\begin{figure}[t]\centering
+\begin{figure}[H]\centering
 \includegraphics[width=0.9\textwidth]{monte_carlo_pie_charts.png}
 \caption{Monte Carlo certification results for each AI model over 1000 simulated exams. Blue indicates certification success; orange indicates failure. Models with enhanced rubrics (e.g., Model~3) show a high success rate, while baseline variants rarely pass.}
 \label{fig:monte-carlo-pie}
@@ -155,13 +152,13 @@ To further validate these results statistically, we performed hypothesis tests c
 
 In summary, our results demonstrate that with the Peru dataset, an AI model configured with a high-quality rubric and clear segment delineations can meet the stringent criteria of the TEACH reliability exam. This is a strong indicator that the model can serve as a consistent evaluator of teaching practice in this context. The next section discusses what this means for practical use and the broader lessons for AI integration into teacher development programs.
 
-\begin{figure}[t]\centering
+\begin{figure}[H]\centering
 \includegraphics[width=0.95\textwidth]{segment_pass_dashboard.png}
 \caption{Average segment pass rate by model on the TEACH reliability criteria (higher is better). The dashed line at 80\% indicates the certification threshold; models above the line would be certified reliable. The “High Rubric” model (Model~3) achieved the highest pass rate (89.3\%), while the baseline “Low Rubric” model (Model~1) lagged around 70\%, failing to meet the standard. Enhanced input (timestamps) and reasoning variants also exceeded the threshold.}
 \label{fig:segment-pass-bar}
 \end{figure}
 
-\begin{figure}[t]\centering
+\begin{figure}[H]\centering
 \includegraphics[width=0.9\textwidth]{monte_carlo_pie_charts.png}
 \caption{Monte Carlo certification results for each AI model. Each pie represents 1000 simulated exams for a model (with two attempts of three lessons each allowed). Blue indicates the percentage of simulations in which the model passed (was certified), and orange the percentage it failed. Models with improved rubrics show a large majority of successful outcomes, e.g., Model~3 (High Rubric) passed about 95\% of the time, while the baseline Model~1 rarely passed at all. (Control model shown as a reference performed worst.) These results mirror the segment pass rates and underscore the reliability gains from rubric enhancements.}
 \label{fig:monte-carlo-pie}
